@@ -1,0 +1,13 @@
+include ../global.pug
+include data.pug
+
+include ../form/index.pug
+
+mixin modal-call()
+  +b.modal._form(data-modal="modal-call")
+    +e.BUTTON.close.close._large(data-izimodal-close)
+    +e.title
+      +e.SPAN.caption Заказать звонок
+    +e.content
+      +form-call
+  

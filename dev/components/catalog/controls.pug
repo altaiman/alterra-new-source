@@ -1,0 +1,17 @@
+include ../global.pug
+include data.pug
+
+include sort.pug
+include view.pug
+
+
+mixin controls(view)
+  +b.FORM.controls
+    +e.block
+      +sort
+    +e.block
+      +view(view)
+      
+      
+    
+  

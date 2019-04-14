@@ -1,0 +1,24 @@
+include ../global.pug
+
+include ../form/index.pug
+
+
+mixin subscribe
+  +b.subscribe
+    +e.SPAN.title
+      +icon('icons_mail', size={ width: '20px', height: '16px' })
+      span Подпишись на рассылку - получи скидку
+    +e.form
+      +b.FORM.form._subscribe
+        +field({
+          cls: '_simple',
+          name: 'Имя'
+        })
+        
+        +field({
+          cls: '_simple',
+          name: 'E-mail'
+        })
+        
+        +b.BUTTON.btn._sub Подписаться
+      

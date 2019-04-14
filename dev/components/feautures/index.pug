@@ -1,0 +1,85 @@
+include ../global.pug
+include data.pug
+
+mixin feautures
+  +b.feautures
+    +e.UL.list.owl-carousel(data-slider="feautures")
+      +e.LI.item.tip._hover
+        +e.A.link(href="#")
+          +e.ico
+            +icon('icons-f-delivery', size = { width: '40px', height: '28px' })
+          +e.SPAN.name Доставка
+        +b.DIV.tip__hidecontent
+          +b.BUTTON.close(data-close)
+          +e.hidecontent-main
+            p Вы можете заказать услугу профессионального монтажа
+          +e.hidecontent-end
+            +e.A.link(href="/") Узнать больше
+      +e.LI.item.tip._hover
+        +e.A.link(href="#")
+          +e.ico
+            +icon('icons-f-replace', size = { width: '38px', height: '38px' })
+          +e.SPAN.name Обмен и возврат <br>товара 100 дней
+        +b.DIV.tip__hidecontent
+          +b.BUTTON.close(data-close)
+          +e.hidecontent-main
+            p Информацуия
+          +e.hidecontent-end
+            +e.A.link(href="/") Узнать больше
+      +e.LI.item.tip._hover
+        +e.A.link(href="#")
+          +e.ico
+            +icon('icons-f-setup', size = { width: '38px', height: '38px' })
+          +e.SPAN.name Установка и монтаж
+        +b.DIV.tip__hidecontent
+          +b.BUTTON.close(data-close)
+          +e.hidecontent-main
+            p Информацуия
+          +e.hidecontent-end
+            +e.A.link(href="/") Узнать больше
+      +e.LI.item.tip._hover
+        +e.A.link(href="#")
+          +e.ico
+            +icon('icons-f-calculator', size = { width: '30px', height: '36px' })
+          +e.SPAN.name Бесплатный предвартельный расчет
+        +b.DIV.tip__hidecontent
+          +b.BUTTON.close(data-close)
+          +e.hidecontent-main
+            p Информацуия
+          +e.hidecontent-end
+            +e.A.link(href="/") Узнать больше
+      +e.LI.item.tip._hover
+        +e.A.link(href="#")
+          +e.ico
+            +icon('icons-f-credit', size = { width: '39px', height: '38px' })
+          +e.SPAN.name Кредит
+        +b.DIV.tip__hidecontent
+          +b.BUTTON.close(data-close)
+          +e.hidecontent-main
+            p Информацуия
+          +e.hidecontent-end
+            +e.A.link(href="/") Узнать больше
+      +e.LI.item.tip._hover
+        +e.A.link(href="#")
+          +e.ico
+            +icon('icons-f-palette', size = { width: '38px', height: '38px' })
+          +e.SPAN.name Колеровка
+        +b.DIV.tip__hidecontent
+          +b.BUTTON.close(data-close)
+          +e.hidecontent-main
+            p Информацуия
+          +e.hidecontent-end
+            +e.A.link(href="/") Узнать больше
+      +e.LI.item.tip._hover
+        +e.A.link(href="#")
+          +e.ico
+            +icon('icons-f-palette', size = { width: '38px', height: '38px' })
+          +e.SPAN.name Колеровка
+        +b.DIV.tip__hidecontent
+          +b.BUTTON.close(data-close)
+          +e.hidecontent-main
+            p Информацуия
+          +e.hidecontent-end
+            +e.A.link(href="/") Узнать больше
+      
+  

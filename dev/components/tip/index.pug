@@ -1,0 +1,56 @@
+include ../global.pug
+
+- 
+  var tips = {
+    bonus: {
+      name: '+ Бонусы',
+      text: 'Копите бонусы и оплачиайте ими до 99.9% стоимости покупок!<br><b>1 бонус = 1 рубль</b>',
+      link: true,
+      cls: '_bonus'
+    }
+  }
+
+mixin tip(data)
+  +b.SPAN.tip(class=data.cls)
+    - if (data.question == true)
+      +e.SPAN.name._question
+        +icon('icons-question', {width: '16px', height: '16px'})
+    - else
+      +e.SPAN.name #{data.name}
+    - if (data.question == true)
+      +e.DIV.hidecontent._light
+        +b.BUTTON.close(data-close)
+        +e.SPAN.hidecontent-caption #{data.caption}
+        +e.hidecontent-main
+          +e.UL.vlist
+            +e.LI 
+              span Статус карты - <strong>Умелец</strong>
+              span 
+                strong 10 000 б.
+            +e.LI 
+              span Статус карты - <strong>Мастер</strong>
+              span 
+                strong 10 000 б.
+            +e.LI 
+              span Статус карты - <strong>Профи</strong>
+              span 
+                strong 10 000 б.
+            +e.LI 
+              span Статус карты - <strong>Эксперт</strong>
+              span 
+                strong 10 000 б.
+              
+        - if (data.link)
+          +e.hidecontent-end
+            +e.A.link(href="/") Узнать больше
+            
+    - else
+      +e.DIV.hidecontent
+        +b.BUTTON.close(data-close)
+        +e.hidecontent-main
+          p !{data.text}
+        - if (data.link)
+          +e.hidecontent-end
+            +e.A.link(href="/") Узнать больше
+    
+  

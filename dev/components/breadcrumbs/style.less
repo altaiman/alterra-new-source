@@ -1,0 +1,44 @@
+.breadcrumbs {
+  display: block;
+  width: calc(~'100% - 228px');
+  margin: 0;
+  padding: 0 8px 0 0;
+  list-style: none;
+  font-size: 13px;
+
+  &__item {
+    display: inline;
+    vertical-align: bottom;
+
+    a {
+      color: @typographyMedium;
+      text-decoration: none;
+      transition: all .2s;
+
+      &:hover {
+        color: @red;
+      }
+    }
+
+    &::after {
+      display: inline-block;
+      transform: rotate(-90deg);
+      content: "";
+      width: 16px;
+      height: 16px;
+      background: url(../img/toggle-arrow.svg) no-repeat 50%;
+      margin: 0 1px -4px;
+    }
+
+    &:last-child {
+      // a {
+      //   color: @typographyHight;
+      //   pointer-events: none;
+      // }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

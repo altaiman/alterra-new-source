@@ -1,0 +1,34 @@
+include ../global.pug
+include data.pug
+
+include ../btn/index.pug
+
+include field.pug
+include checkbox.pug
+
+mixin form
+  +b.FORM.form
+  
+mixin form-call
+  +b.FORM.form
+    +field({
+      name: 'Имя'
+    })
+    +field({
+      name: 'Фамилия'
+    })
+    +field({
+      name: 'Отчество'
+    })
+    +field({
+      name: 'Телефон',
+      cls: '_error'
+    })
+    +field({
+      name: 'Город'
+    })
+    +textarea({
+      name: 'Ваш вопрос'
+    })
+    +b.INPUT.btn(type="submit" value="Отправить")
+    

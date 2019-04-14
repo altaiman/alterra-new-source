@@ -1,0 +1,65 @@
+.review {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid @dark;
+  background: @white;
+
+  &__source {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+
+    .label {
+      margin: 0;
+    }
+  }
+
+  &__side {
+    width: 56px;
+  }
+
+  &__main {
+    width: calc(~'100% - 64px');
+  }
+
+  &__head {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__photo {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    max-width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      max-width: 100%;
+    }
+  }
+
+  &__date {
+    display: inline-block;
+    margin: 0 8px;
+  }
+
+  &__content {
+    line-height: 1.4;
+    // max-width: 500px;
+    font-size: 15px;
+
+    p {
+      margin: 8px 0;
+    }
+  }
+}

@@ -1,0 +1,213 @@
+include ../global.pug
+include data.pug
+
+mixin catalog-nav-list
+  +e.UL.list
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-action.svg")
+          //- +icon('icons-menu-action', size={width:'16px',height:'18px'})
+        +e.A.item-link(href="#") Акции
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-cat1.svg")
+          //- +icon('icons-menu-home', size={width:'18px',height:'18px'})
+        +e.A.item-link(href="#") Сайдинг, кровля, водосток
+      +b.drop-nav
+        +e.SPAN.title Сайдинг, кровля, водосток
+        +e.content
+          +e.UL.list._drop
+            +e.LI.item._group(data-counter="338")
+              a(href="/") Сайдинг
+            +e.LI.item
+              a(href="/213") Виниловый сайдинг
+            +e.LI.item
+              a(href="#") Акриловый сайдинг
+            +e.LI.item
+              a(href="#") Фасадные панели (цокольный сайдинг)
+            +e.LI.item
+              a(href="#") Комплектующие к сайдингу
+            +e.LI.item
+              a(href="#") Комплектующие к фасадным панелям
+            +e.LI.item
+              a(href="#") Металлический сайдинг
+              
+          +e.UL.list._drop
+            +e.LI.item._group(data-counter="82")
+              a(href="#") МЯГКАЯ КРОВЛЯ
+            +e.LI.item
+              a(href="#") Гибкая черепица
+            +e.LI.item
+              a(href="#") Комплектующие к гибкой черепице
+            +e.LI.item
+              a(href="#") Подкладочные ковры
+              
+          +e.UL.list._drop
+            +e.LI.item._group(data-counter="78")
+              a(href="#") ПРОФНАСТИЛ, ДОБОРНЫЕ ЭЛЕМЕНТЫ
+            +e.LI.item
+              a(href="#") Профнастил оцинкованный
+            +e.LI.item
+              a(href="#") Профнастил полимеренный (цветной)
+            +e.LI.item
+              a(href="#") Доборные элементы
+            +e.LI.item
+              a(href="#") Элементы безопасности и комплектации кровли
+            +e.LI.item
+              a(href="#") Профнастил из поликарбоната
+              
+          +e.UL.list
+            +e.LI.item._group(data-counter="75")
+              a(href="#") ВОДОСТОЧНАЯ СИСТЕМА
+              
+          +e.UL.list
+            +e.LI.item._group(data-counter="13")
+              a(href="#") НАПЛАВЛЯЕМАЯ КРОВЛЯ
+              
+          +e.UL.list
+            +e.LI.item._group(data-counter="5")
+              a(href="#") Рубероид
+              
+          +e.UL.list._drop
+            +e.LI.item._group(data-counter="33")
+              a(href="#") ОНДУЛИН
+            +e.LI.item
+              a(href="#") Ондулин листы
+            +e.LI.item
+              a(href="#") Комплектующие к Ондулину
+              
+          +e.UL.list._drop
+            +e.LI.item._group(data-counter="26")
+              a(href="#") БИТУМ, МАСТИКА, ПРАЙМЕР
+            +e.LI.item
+              a(href="#") Мастика кровельная
+            +e.LI.item
+              a(href="#") Мастика гидроизоляционная
+            +e.LI.item
+              a(href="#") Праймер битумный
+            +e.LI.item
+              a(href="#") Битум
+              
+          +e.UL.list._drop
+            +e.LI.item._group(data-counter="10")
+              a(href="#") ЛИСТ СТАЛЬНОЙ
+            +e.LI.item
+              a(href="#") Лист оцинкованный  
+            +e.LI.item
+              a(href="#") Лист полимеренный (цветной)
+                
+          +e.UL.list
+            +e.LI.item._group(data-counter="3")
+              a(href="#") Шифер
+              
+          +e.UL.list
+            +e.LI.item._group(data-counter="11")
+              a(href="#") ГИДРОИЗОЛЯЦИОННЫЕ ЛЕНТЫ
+              
+          +e.UL.list
+            +e.LI.item._group(data-counter="12")
+              a(href="#") ДРЕНАЖНАЯ СИСТЕМА 
+              
+          +e.UL.list
+            +e.LI.item._group(data-counter="17")
+              a(href="#") МЕТАЛЛОЧЕРЕПИЦА 
+              
+          +e.UL.list
+            +e.LI.item._group(data-counter="8")
+              a(href="#") ПВХ МЕМБРАНА
+              
+          +e.UL.list
+            +e.LI.item._group(data-counter="6")
+              a(href="#") ФАСАДНАЯ ПЛИТКА 
+              
+
+
+              
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-cat2.svg")
+          //- +icon('icons-menu-roll', size={width:'20px',height:'19px'})
+        +e.A.item-link(href="#") Теплоизоляционные материалы
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-cat3.svg")
+          //- +icon('icons-menu-bricks', size={width:'24px',height:'14px'})
+        +e.A.item-link(href="#") Кирпич, цемент, газобетон, плитка
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-cat4.svg")
+          //- +icon('icons-menu-metal', size={width:'24px',height:'24px'})
+        +e.A.item-link(href="#") Металлопрокат
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-cat5.svg")
+          //- +icon('icons-menu-interior', size={width:'20px',height:'22px'})
+        +e.A.item-link(href="#") Внутренняя отделка
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-cat6.svg")
+          //- +icon('icons-menu-wood', size={width:'20px',height:'17px'})
+        +e.A.item-link(href="#") Древесные материалы
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-cat7.svg")
+          //- +icon('icons-menu-paint', size={width:'20px',height:'20px'})
+        +e.A.item-link(href="#") Лакокрасочные материалы, пены, герметики
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-cat8.svg")
+          //- +icon('icons-menu-heating', size={width:'18px',height:'14px'})
+        +e.A.item-link(href="#") Отопление, водоснабжение, канализация
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-cat9.svg")
+          //- +icon('icons-menu-bath', size={width:'19px',height:'18px'})
+        +e.A.item-link(href="#") Санфаяс, ванная, кухня
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-cat10.svg")
+          //- +icon('icons-menu-garden', size={width:'20px',height:'20px'})
+        +e.A.item-link(href="#") Сад и огород
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-cat11.svg")
+          //- +icon('icons-menu-tools', size={width:'18px',height:'17px'})
+        +e.A.item-link(href="#") Инструменты, хозтовары, крепеж
+    +e.LI.item
+      +e.item-wrap
+        +e.item-ico 
+          img(src="img/menu/m-icons-cat12.svg")
+          //- +icon('icons-menu-electric', size={width:'18px',height:'18px'})
+        +e.A.item-link(href="#") Электрика
+
+mixin catalog-nav
+  +b.catalog-nav
+      +e.head.toggle(data-toggle="catalog-nav__list")._close
+        +icon('icons-menu', size={ width: '18px', height: '14px' })
+        +b.SPAN.caption._small Каталог товаров
+      +catalog-nav-list
+          
+mixin catalog-nav-index
+  +b.catalog-nav._index
+    +e.head.toggle(data-toggle="catalog-nav__list")
+      +icon('icons-menu', size={ width: '18px', height: '14px' })
+      +b.SPAN.caption._small Каталог товаров
+    +catalog-nav-list
+    
+mixin catalog-nav-mobile
+  +b.catalog-nav._mobile
+    +catalog-nav-list
+    
+    

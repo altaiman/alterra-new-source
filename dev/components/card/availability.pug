@@ -1,0 +1,55 @@
+include ../global.pug
+
+mixin availability(instock)
+  - if (instock)
+      +b.availability.availability_in.tip__._wide
+        +e.SPAN.name В наличии
+        +e.DIV.hidecontent._light
+          +b.BUTTON.close(data-close)
+          +e.hidecontent-top
+            +e.SPAN Адрес магазина
+            +e.SPAN кол-во
+          +e.hidecontent-main
+            +e.UL.vlist
+              +e.LI 
+                span Новоалтайск, ул. Дорожная, 44/1
+                span 
+                  strong >100 шт.
+              +e.LI 
+                span Новоалтайск, ул. Ударника, 2г
+                span
+                  strong >100 шт.
+              +e.LI 
+                span Барнаул, Павловский тракт, 206 б
+                span
+                  strong 18 шт.
+              +e.LI 
+                span Бийск, Шубенский, 75
+                span
+                  strong 45 шт.
+  - else
+      +b.availability.availability_not.tip__._wide
+        +e.SPAN.name В наличии
+        +e.DIV.hidecontent._light
+          +b.BUTTON.close(data-close)
+          +e.hidecontent-top
+            +e.SPAN Адрес магазина
+            +e.SPAN кол-во
+          +e.hidecontent-main
+            +e.UL.vlist
+              +e.LI 
+                span Новоалтайск, ул. Дорожная, 44/1
+                span 
+                  strong >100 шт.
+              +e.LI 
+                span Новоалтайск, ул. Ударника, 2г
+                span
+                  strong >100 шт.
+              +e.LI 
+                span Барнаул, Павловский тракт, 206 б
+                span
+                  strong 18 шт.
+              +e.LI 
+                span Бийск, Шубенский, 75
+                span
+                  strong 45 шт.

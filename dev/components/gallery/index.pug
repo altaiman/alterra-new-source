@@ -1,0 +1,27 @@
+include ../global.pug
+include data.pug
+
+mixin gallery
+  +b.gallery
+    +e.A.view.magnifier-thumb-wrapper(id="gallery-view" href="")
+    
+    +b.modal._zoom(data-modal="zoom")
+      +b.BUTTON.close._large._highlight(data-izimodal-close)
+      +e.content
+    
+    +e.UL.list(data-slider="gallery")
+      +e.LI.element(style="background-image: url(pictures/thumb.png)")
+        img(src="pictures/gallery.png")
+      +e.LI.element(style="background-image: url(https://picsum.photos/1280/960)")
+        img(src="https://picsum.photos/1280/960")
+      +e.LI.element(style="background-image: url(pictures/thumb.png)")
+        img(src="pictures/gallery.png")
+      +e.LI.element._video(style="background-image: url(pictures/thumb.png)")
+        video(controls)
+          source(src="video/video.mp4" type="video/mp4")
+      +e.LI.element._file(style="background-image: url(img/pdf.svg)" data-file="upload/bronstein.pdf")
+        
+      +e.LI.element(style="background-image: url(pictures/thumb.png)")
+        img(src="pictures/gallery.png" data-magnify-src="pictures/gallery.png")
+          
+    +e.preview#preview  

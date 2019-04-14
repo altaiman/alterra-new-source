@@ -1,0 +1,40 @@
+include ../global.pug
+
+- var c = 0;
+
+mixin characteristic(data)
+  +b.UL.vlist
+  
+    each val in data
+      +e.LI.line
+        +e.SPAN.name= val.name
+        +e.SPAN.val= val.value
+    
+    +e.LI.line
+      +b.A.link(href="#characteristic") Все характеристики
+      
+mixin characteristic-full(data)
+  +b.UL.vlist._full(data-show="10")
+  
+    each val in data
+      +e.LI.line
+        +e.SPAN.name= val.name
+        +e.SPAN.val= val.value
+    
+    +e.LI.line._more
+      +e.SPAN.more Все характеристики
+        
+      
+mixin availability-list(data)
+  +b.UL.vlist._full(data-show="1")
+    +e.LI.line._head
+      +e.SPAN.name <strong>В выбранном магазине</strong>
+      +e.SPAN.val <strong>кол-во</strong>
+      
+    each val in data
+      +e.LI.line
+        +e.SPAN.name= val.name
+        +e.SPAN.val= val.value
+        
+    +e.LI.line._more
+      +e.SPAN.more Наличие в других магазинах

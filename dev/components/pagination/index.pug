@@ -1,0 +1,37 @@
+include ../global.pug
+include data.pug
+
+- var page = 1;
+
+mixin pagination(pages)
+  - var active = 2;
+  
+  +b.pagination
+    +e.P.text Товаров: <strong>1-16</strong> из <strong>48</strong>
+    +e.UL.pages
+      +e.LI.page._arrow._prev._double
+        a(href="#arrow")
+      +e.LI.page._arrow._prev
+        a(href="#arrow")
+      - if (pages)
+        while (page < pages)
+          - if (page == active)
+              +e.LI.page._active
+                a(href="#page"+page)= page
+          - else
+              +e.LI.page
+                a(href="#page"+page)= page
+          - page++
+      - else
+        +e.LI.page._active
+          a(href="#page1") 1
+        +e.LI.page
+          a(href="#page2") 2 
+        +e.LI.page
+          a(href="#page3") 3
+          
+      +e.LI.page._arrow._next._double
+        a(href="#arrow")
+      +e.LI.page._arrow._next
+        a(href="#arrow")
+  

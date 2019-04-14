@@ -1,0 +1,41 @@
+//- includes
+include components/head/shop.pug
+include components/header/index.pug
+include components/svg/index.pug
+
+include components/breadcrumbs/index.pug
+include components/card/index.pug
+include components/filter/index.pug
+include components/catalog/index.pug
+include components/catalog/nav.pug
+include components/pagination/index.pug
+include components/description/index.pug
+include components/feautures/index.pug
+include components/promo/index.pug
+include components/review/index.pug
+include components/video/index.pug
+include components/modal/index.pug
+include components/shop/index.pug
+
+include components/footer/index.pug
+
+//- end includes
+
+//- variables page 
+- title = 'Главная';
+
+doctype html
+html
+	+head-shop
+	+b.BODY.page._shop
+		+symbols
+		+header
+		
+		+e.content
+			+shop
+					
+
+		+footer
+		+b.modal._zoom._transparent(data-modal="zoom")
+			+b.BUTTON.close._large._highlight(data-izimodal-close)
+			+e.content

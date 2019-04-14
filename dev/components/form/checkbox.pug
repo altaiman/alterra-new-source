@@ -1,0 +1,10 @@
+include ../global.pug
+include data.pug
+
+mixin checkbox(data)
+  +b.LABEL.checkbox(class=data.cls)
+    +e.DIV.box
+      +e.INPUT.input&attributes(data.attr)(type="checkbox")
+      +e.DIV.box-custom
+    +e.SPAN.name #{data.name}
+  

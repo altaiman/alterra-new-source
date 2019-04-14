@@ -1,0 +1,76 @@
+//- includes
+include components/head/index.pug
+include components/header/index.pug
+include components/svg/index.pug
+
+include components/breadcrumbs/index.pug
+include components/card/index.pug
+include components/filter/index.pug
+include components/catalog/index.pug
+include components/catalog/nav.pug
+include components/pagination/index.pug
+include components/description/index.pug
+include components/feautures/index.pug
+
+include components/footer/index.pug
+
+//- end includes
+
+//- variables page 
+- title = 'Эмали для пола';
+
+doctype html
+html
+	+head
+	+b.BODY.page
+		+symbols
+
+		+header
+		
+		+e.content
+
+			+b.container
+				+e.content
+					+e.line
+						+catalog-nav
+						+breadcrumbs(['Лакокрасочные материалы, пены, герметики',
+													'Эмали',
+													title])
+					+e.line
+						+caption({title: title})
+						p всего товаров: <strong>72</strong>
+					+e.ASIDE.side
+						+filter
+
+					+e.main
+						+controls(2)
+						+b.catalog
+							+e.list._column
+								+card-list(dataCard['item1'])
+								+card-list(dataCard['item1'])
+								+card-list(dataCard['item1'])
+								+card-list(dataCard['item2'])
+								+card-list(dataCard['item3'])
+								+card-list(dataCard['item2'])
+								+card-list(dataCard['item6'])
+								+card-list(dataCard['item2'])
+								+card-list(dataCard['item3'])
+								+card-list(dataCard['item4'])
+								+card-list(dataCard['item7'])
+								+card-list(dataCard['item4'])
+								+card-list(dataCard['item6'])
+								+card-list(dataCard['item5'])
+								+card-list(dataCard['item5'])
+
+						+b.BUTTON.btn._update Показать еще
+
+						+description-catalog({
+							short: 'Твердотопливные котлы — это высокоэффективное оборудование, используемое для отопления коттеджей, административных зданий и промышленных объектов. КПД отопительных котлов на твердом топливе составляет 60-80%. Но в противовес более низкому КПД такие котлы имеют несомненное преимущество – это топливо.',
+							all: 'Твердотопливные котлы — это высокоэффективное оборудование, используемое для отопления коттеджей, административных зданий и промышленных объектов. КПД отопительных котлов на твердом топливе составляет 60-80%. Но в противовес более низкому КПД такие котлы имеют несомненное преимущество – это топливо.'
+						}) 
+
+		+e.area
+			+b.container
+				+feautures
+
+		+footer

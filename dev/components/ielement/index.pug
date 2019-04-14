@@ -1,0 +1,9 @@
+include ../global.pug
+
+mixin ielement(data)
+  +b.A.i-element(href=data.link class=((data.classes) ? data.classes : '') + ((data.icon) ? '_ico' : ''))
+    - if (data.icon)
+      +e.ico(data-counter=data.counter)
+        +icon(data.icon.name, data.icon.size)
+    +e.SPAN.name #{data.name}
+    +e.SPAN.val #{data.val}

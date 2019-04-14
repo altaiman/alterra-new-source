@@ -1,0 +1,149 @@
+include ../global.pug
+
+include ../gallery/index.pug
+include characteristic.pug
+include flist.pug
+
+mixin card-page(array)
+  +b.card.card_full
+    +e.gallery
+      +e.mobile
+        +b.vendor-code код: Ц19230109123
+        +b.availability._in
+          span В наличии
+          
+      +e.message
+        p Маленький дефект-большая скидка!
+      +gallery
+    +e.main
+      +e.info
+        +e.info-line
+          +b.tip
+            +e.BUTTON.name.btn._transparent._highlight СтройКлуб
+            +e.DIV.hidecontent
+              +b.BUTTON.close(data-close)
+              +e.hidecontent-main
+                p Информация
+              +e.hidecontent-end
+                +e.A.link(href="/") Узнать больше
+                  
+          +b.vendor-code код: Ц19230109123
+        +e.info-block
+          +caption({title: 'Характеристики', size: 0})
+          +characteristic([
+            {
+              name: 'Вид товара',
+              value: 'FineBer'
+            },{
+              name: 'Производитель',
+              value: 'FineBer'
+            },{
+              name: 'Присоединительная резьба',
+              value: '1/2 дюйма'
+            },{
+              name: 'Вид топлива',
+              value: 'Уголь, дрова'
+            },{
+              name: 'Площадь обогрева при высоте',
+              value: '200 м²'
+            }
+          ])
+        
+        +e.info-block
+          +caption({title:'Возможные услуги', size:0})
+          +flist([{
+            tip: {
+              text: 'Доставка'
+            }
+          },{},
+          {
+            tip: {
+              text: 'Доставка'
+            }
+          }])
+          
+      +e.info._buy
+        +e.info-line
+          +e.info-cell
+            +e.price-name
+              span цена:
+              +b.price-type
+                +e.BUTTON.option м²
+                +e.BUTTON.option._active м.п.
+          +e.info-cell
+            +e.SPAN.price 00 000 р.
+        +e.info-line
+          +e.info-cell
+            span по карте <br>СтройКлуба:
+          +e.info-cell
+            +e.SPAN.price._club 00 000 р.
+            +tip(tips.bonus)
+        +e.info-line._controls
+          +e.info-cell
+            +counter-big(10)
+            +b.BUTTON.btn._highlight._size-m В корзину
+          +e.info-cell
+            +e.controls
+              +b.SPAN.action 
+                +e.ico
+                  +icon('icons_compare', size={width: '12px', height: '13px'})
+                +e.SPAN.name Сравнить
+              +b.SPAN.action 
+                +e.ico
+                  +icon('icons_bookmark', size={width: '10px', height: '14px'})
+                +e.SPAN.name В смету
+                
+        +e.info-block
+          +b.availability._in.tip__._wide
+            +e.SPAN.name В наличии
+            +e.DIV.hidecontent._light
+              +b.BUTTON.close(data-close)
+              +e.hidecontent-top
+                +e.SPAN Адрес магазина
+                +e.SPAN кол-во
+              +e.hidecontent-main
+                +e.UL.vlist
+                  +e.LI 
+                    span Новоалтайск, ул. Дорожная, 44/1
+                    span 
+                      strong >100 шт.
+                  +e.LI 
+                    span Новоалтайск, ул. Ударника, 2г
+                    span
+                      strong >100 шт.
+                  +e.LI 
+                    span Барнаул, Павловский тракт, 206 б
+                    span
+                      strong 18 шт.
+                  +e.LI 
+                    span Бийск, Шубенский, 75
+                    span
+                      strong 45 шт.
+                      
+          +availability-list([
+            {
+              name: 'Новоалтайск, ул. Дорожная, 44/1',
+              value: '>100 шт.'
+            },{
+              name: 'Новоалтайск, ул. Дорожная, 44/1',
+              value: '>100 шт.'
+            },{
+              name: 'Новоалтайск, ул. Дорожная, 44/1',
+              value: '>100 шт.'
+            }
+          ])
+          
+        +e.info-block
+          +caption({title: 'Способы получения товара', size: 0})
+          +flist([
+            { name: 'Доставка',
+              tip: {
+                text: 'Доставка'
+              }
+            },
+            { name: 'Самовызов' }
+          ])
+        
+            
+              
+      

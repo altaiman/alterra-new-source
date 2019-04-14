@@ -1,0 +1,148 @@
+include ../global.pug
+include data.pug
+
+mixin cart-head
+  +e.row._head
+    +e.cell
+      +e.SPAN.caption Товары
+    +e.cell
+      +e.SPAN.caption Цена по карте
+    +e.cell
+      +e.SPAN.caption Количество
+    +e.cell
+      +e.SPAN.caption Сумма
+
+mixin cart-item
+  +e.row._item
+    +e.cell
+      +e.item
+        +e.A.item-pic(href="#")
+          img(src="pictures/card.jpg")
+        +e.item-main
+          +e.item-line
+            +b.vendor-code <span>код:</span>0А-00013955
+            +b.vendor-code <span>Вес:</span>1.5 кг.
+          +e.item-line
+            +e.A.item-title(href="#") Штукатурка гипсовая Knauf ротбанд 10кг Штукатурка гипсовая Knauf ротбанд 10кг
+          +e.item-line
+            +flist-small([{
+              tip: {
+                text: 'Доставка <br> Бесплатно'
+              }
+            },{},{}])
+          +e.item-line
+            +b.BUTTON.btn._white Переместить в смету
+    +e.cell
+      +e.price(data-adaptive="цена:")
+        span 44 090 р./шт
+      
+    +e.cell
+      +counter(10)
+      
+    +e.cell
+      +e.price._all(data-adaptive="сумма:") 32 340 р.
+      
+    +e.message
+      span Цена при покупке от 13-14 поддонов
+    
+    +e.BUTTON.close
+      +icon('icons-close', {width: '11px', height: '11px'})
+      
+mixin cart-item2
+  +e.row._item
+    +e.cell
+      +e.item
+        +e.A.item-pic(href="#")
+          img(src="pictures/card.jpg")
+        +e.item-main
+          +e.item-line
+            +b.vendor-code <span>код:</span>0А-00013955
+            +b.vendor-code <span>Вес:</span>1.5 кг.
+          +e.item-line
+            +e.A.item-title(href="#") Штукатурка гипсовая Knauf ротбанд 10кг Штукатурка гипсовая Knauf ротбанд 10кг
+          +e.item-line
+            +b.BUTTON.btn._white Переместить в смету
+    +e.cell
+      +e.price 
+        span 44 090 р./шт
+      
+    +e.cell
+      +counter(10)
+      
+    +e.cell
+      +e.price._all 32 340 р.
+      
+    +e.message
+      span Цена при покупке от 13-14 поддонов
+    
+    +e.BUTTON.close
+      +icon('icons-close', {width: '11px', height: '11px'})
+      
+mixin cart-item3
+  +e.row._item
+    +e.cell
+      +e.item
+        +e.A.item-pic(href="#")
+          img(src="pictures/card.jpg")
+        +e.item-main
+          +e.item-line
+            +b.vendor-code <span>код:</span>0А-00013955
+            +b.vendor-code <span>Вес:</span>1.5 кг.
+          +e.item-line
+            +e.A.item-title(href="#") Штукатурка гипсовая Knauf ротбанд 10кг Штукатурка гипсовая Knauf ротбанд 10кг
+          +e.item-line
+            +b.availability.availability_not 
+              span Нет в наличии
+          +e.item-line    
+            +b.BUTTON.btn._white Добавить в корзину
+    +e.cell
+      +e.price 
+        span 44 090 р./шт
+      
+    +e.message
+      span Цена при покупке от 13-14 поддонов
+    
+    +e.BUTTON.close
+      +icon('icons-close', {width: '11px', height: '11px'})
+      
+      
+mixin cart
+  +b.cart
+    +cart-head
+        
+    +cart-item
+    +cart-item
+    +cart-item
+    +cart-item
+    +cart-item
+    +cart-item
+    +cart-item
+    +cart-item
+    +cart-item
+    +cart-item
+    +cart-item
+    +cart-item
+        
+mixin cart2
+  +b.cart
+    +cart-head
+        
+    +cart-item2
+    +cart-item2
+    
+mixin cart3
+  +b.cart._wide
+    +e.row._head
+      +e.cell
+        +e.SPAN.caption Товары
+      +e.cell
+        +e.SPAN.caption Цена по карте
+        
+    +cart-item3
+    +cart-item3
+    +cart-item3
+    
+    +pagination(6)
+    
+        
+        

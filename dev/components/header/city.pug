@@ -1,0 +1,27 @@
+include ../global.pug
+
+mixin city
+  +b.city(data-drop)
+    +e.current
+      span Город <strong data-drop="trigger">Новоалтайск</strong>
+    +e.info
+      +e.info-cell
+        span ул. Дорожная, 44/1
+      +e.info-cell
+        +e.A.tel(href="tel:+73853245757") 
+          +icon('icons_tel')
+          span +7 (38532) 4-57-57
+    +b.drop
+      +e.main
+        +e.SPAN.caption Выберите ближайший торговый комплекс
+        +e.SPAN.text
+          i От выбора зависит наличие товаров и стоимость доставки
+      +e.UL.list
+        +e.LI.item._active
+          span Магазин на авторазвязке<br>Барнаул-Бийск-Новосибирск
+        +e.LI.item 
+          span г. Барнаул, Павловский тракт, 206 б
+        +e.LI.item
+          span г. Новоалтайск, ул. Ударника, 2
+        +e.LI.item
+          span г. Бийск, пер. Шубенский, 75

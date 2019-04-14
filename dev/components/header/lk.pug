@@ -1,0 +1,16 @@
+include ../global.pug
+
+include ../svg/index.pug
+
+mixin lk
+  +b.lk-top(data-drop)
+    +b.BUTTON.btn._ico._transparent(data-drop="trigger") 
+      +e.SPAN.ico
+        +icon('icons_user', size={ width: '13px', height: '14px'})
+      span Кабинет
+    +b.drop
+      +e.UL.list
+        +e.LI.item._link
+          a(href="#login") Войти
+        +e.LI.item._link
+          a(href="#registration") Зарегистрироваться

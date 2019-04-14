@@ -1,0 +1,108 @@
+include ../global.pug
+include data.pug
+
+include ../card/index.pug
+include ../pagination/index.pug
+include controls.pug
+
+- 
+  var n = 0;
+
+mixin catalog(items)
+  +controls(1)
+  +b.catalog
+    +e.list
+      - if (items)
+        while n < items
+          +card(dataCard['item'+randomInt(1, cards)])
+          - n++
+      +pagination
+    
+      
+      
+mixin catalog-list(items)
+  +controls(2)
+  +b.catalog
+    +e.list._column
+      - if (items)
+        while n < items
+          +card-list(dataCard['item'+randomInt(1, cards)])
+          - n++
+      +pagination(6)
+      
+      
+      
+mixin catalog-table(items)
+  +controls(3)
+  +b.catalog
+    +e.list._column
+      - if (items)
+        while n < items
+          +card-table(dataCard['item'+randomInt(1, cards)])
+          - n++
+      +pagination(5)
+      
+mixin category(data)
+  +b.category
+    +e.A.wrap(href=(data.link) ? data.link : '#')
+      +e.DIV.photo
+        - if (data.photo)
+          img(src="pictures/"+data.photo)
+        - else
+          img(src="pictures/category-no-photo.png")
+            
+      +e.SPAN.title(data-counter=(data.counter) ? data.counter : 5)= data.title
+      
+                
+      
+mixin categorys()
+  +b.catalog._category
+    +e.top
+      +breadcrumbs(['Лакокрасочные материалы, пены, герметики',
+                    'Эмали',
+                    title])
+      +caption({title: title})
+      
+    +e.list
+      +category({
+        title: 'Перфораторы',
+        counter: 9
+      })
+      +category({
+        title: 'Шуруповерты',
+      })
+      +category({
+        title: 'Дрели',
+      })
+      +category({
+        title: 'УШМ',
+      })
+      +category({
+        title: 'Шлифовальные машины',
+      })
+      +category({
+        title: 'Лобзики',
+      })
+      +category({
+        title: 'Пистолеты клеевые электрические',
+      })
+      +category({
+        title: 'Фены',
+      })
+      +category({
+        title: 'Станки точильные',
+      })
+      +category({
+        title: 'Краскопульты',
+      })
+      +category({
+        title: 'Компрессоры',
+      })
+      +category({
+        title: 'Пылесосы промышленные',
+      })
+      
+                
+      
+    
+  

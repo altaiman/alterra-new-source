@@ -1,0 +1,22 @@
+include ../global.pug
+
+mixin logotype(header)
+  - if (header)
+    +b.A.logotype._header(href="index.html")
+      svg
+        use(xlink:href="#alterra-logotype")
+  - else 
+    +b.A.logotype(href="index.html")
+      svg
+        use(xlink:href="#alterra-logotype-blue")
+      p «Альтерра» - все для стройки и ремонта.<br>Строительные и отделочные материалы оптом и в розницу. 
+
+mixin logotype_mobile
+  +b.A.logotype(href="index.html")
+    svg
+      use(xlink:href="#alterra-logotype-mobile")
+        
+mixin logotype_small
+  +b.A.logotype._small(href="index.html")
+    svg
+      use(xlink:href="#alterra-logotype-fix")

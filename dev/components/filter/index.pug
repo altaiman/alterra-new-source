@@ -1,0 +1,48 @@
+include ../global.pug
+include data.pug
+
+include ../form/index.pug
+
+include range.pug
+
+mixin filter
+  +b.filter
+    +e.block
+      +e.block-head.toggle(data-toggle="filter__block-content")
+        +caption({ title: 'Цена', size: 0 })
+      +e.block-content
+        +range(dataFilter.price)
+    +e.block
+      +e.block-head.toggle(data-toggle="filter__block-content")
+        +caption({ title: 'Наличие', size: 0 })
+      +e.block-content
+        +checkbox({ name: 'Пункт' })
+    +e.block
+      +e.block-head.toggle(data-toggle="filter__block-content")
+        +caption({ title: 'Цвет', size: 0 })
+      +e.block-content
+        each color in dataFilter.colors
+          +checkbox({ name: color })
+    +e.block
+      +e.block-head.toggle(data-toggle="filter__block-content")
+        +caption({ title: 'Тип работ', size: 0 })
+      +e.block-content
+        +checkbox({ name: 'Внутренние работы' })
+    +e.block
+      +e.block-head.toggle(data-toggle="filter__block-content")
+        +caption({ title: 'Тип растворителя', size: 0 })
+      +e.block-content
+        +checkbox({ name: 'Уайт-спирит' })
+    +e.block
+      +e.block-head
+        +b.BUTTON.btn._ico._ico-right._white._size-m 
+          +e.ico
+            +icon('icons-close', {width: '11px', height: '11px'})
+          span Сбросить фильтр
+        //- +btn({
+        //-   name: 'Сбросить фильтр',
+        //-   size: btnStyle.size[1],
+        //-   style: '_remove ' + btnStyle.additional
+        //- })
+        
+          

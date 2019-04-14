@@ -1,0 +1,137 @@
+//- includes
+include components/head/index.pug
+include components/header/index.pug
+include components/svg/index.pug
+
+include components/breadcrumbs/index.pug
+include components/card/index.pug
+include components/filter/index.pug
+include components/catalog/index.pug
+include components/catalog/nav.pug
+include components/pagination/index.pug
+include components/description/index.pug
+include components/feautures/index.pug
+include components/review/index.pug
+include components/video/index.pug
+
+include components/footer/index.pug
+
+//- end includes
+
+//- variables page 
+- title = 'Отзывы';
+
+doctype html
+html
+	+head
+	+b.BODY.page
+		+symbols
+		+header
+	
+		+e.content
+
+			+b.container
+				+e.content
+					+e.line
+						+catalog-nav
+						+breadcrumbs(['Лакокрасочные материалы, пены, герметики',
+													'Эмали',
+													title])
+													
+					+b.A.btn._back(href="/") Назад
+													
+					+caption({title: title})
+				
+					+b.reviews
+						+e.filter
+							+b.BUTTON.btn._ico._tr-border 
+								+e.ico
+									+icon('icons-chat', size={width: '16px', height: '16px'})
+								+e.SPAN.name Все отзывы
+							+e.labels
+								+b.A.label(href="#yandex")
+									svg(width="85px")
+										use(xlink:href="#yandex-market")
+								+b.A.label(href="#2gis")
+									svg(width="46px")
+										use(xlink:href="#2gis")
+								+b.A.label(href="#flamp")
+									svg(width="68px")
+										use(xlink:href="#flamp")
+									
+							+e.BUTTON.write.btn Написать отзыв
+								
+						+e.list._video
+							+video({
+								preview: 'preview.jpg',
+								video: 'https://www.youtube.com/embed/1G4isv_Fylg?autoplay=1',
+								id: 1
+							})
+							+video({
+								preview: 'preview.jpg',
+								video: 'https://www.youtube.com/embed/1G4isv_Fylg?autoplay=1',
+								id: 2
+							})
+							+video({
+								preview: 'preview.jpg',
+								video: 'https://www.youtube.com/embed/1G4isv_Fylg?autoplay=1',
+								id: 3
+							})
+						+e.list
+							+review({
+								author: 'Михаил',
+								photo: 'michael.jpg',
+								date: '20 сентября в 12:30',
+								text: 'Обслуживание по телефону ( оператор Дарья) -супер. Трубку взяли за пару секунд, проконсультировали, сориентировали по наличию и по цене! В отличае от, например, Дюйма, там первый раз после 5-ти минутного ожидания сбросили, во второй раз переводили с сотрудника на сотрудника, только третий сотрудник проконсультировал.',
+								source: 'yandex'
+							})
+							
+							+review({
+								author: 'Дарья',
+								photo: 'dasha.jpg',
+								date: '21 сентября в 09:30',
+								text: 'Обслуживание по телефону ( оператор Дарья) -супер. Трубку взяли за пару секунд, проконсультировали, сориентировали по наличию и по цене! В отличае от, например, Дюйма, там первый раз после 5-ти минутного ожидания сбросили, во второй раз переводили с сотрудника на сотрудника, только третий сотрудник проконсультировал.',
+								source: '2gis'
+							})
+							
+							+review({
+								author: 'Дарья',
+								photo: 'dasha.jpg',
+								date: '21 сентября в 09:30',
+								text: 'Обслуживание по телефону ( оператор Дарья) -супер. Трубку взяли за пару секунд, проконсультировали, сориентировали по наличию и по цене! В отличае от, например, Дюйма, там первый раз после 5-ти минутного ожидания сбросили, во второй раз переводили с сотрудника на сотрудника, только третий сотрудник проконсультировал. Обслуживание по телефону ( оператор Дарья) -супер. Трубку взяли за пару секунд, проконсультировали, сориентировали по наличию и по цене! В отличае от, например, Дюйма, там первый раз после 5-ти минутного ожидания сбросили, во второй раз переводили с сотрудника на сотрудника, только третий сотрудник проконсультировал.',
+								source: 'flamp'
+							})
+							
+							+review({
+								author: 'Дарья',
+								photo: 'dasha.jpg',
+								date: '21 сентября в 09:30',
+								text: 'Обслуживание по телефону ( оператор Дарья) -супер. Трубку взяли за пару секунд, проконсультировали, сориентировали по наличию и по цене! В отличае от, например, Дюйма, там первый раз после 5-ти минутного ожидания сбросили, во второй раз переводили с сотрудника на сотрудника, только третий сотрудник проконсультировал.',
+								source: {
+									name: 'iRecommend.ru',
+									link: 'https://irecommend.ru/'
+								}
+							})
+							
+							+review({
+								author: 'Дарья',
+								photo: 'dasha.jpg',
+								date: '21 сентября в 09:30',
+								text: 'Обслуживание по телефону ( оператор Дарья) -супер. Трубку взяли за пару секунд, проконсультировали, сориентировали по наличию и по цене! В отличае от, например, Дюйма, там первый раз после 5-ти минутного ожидания сбросили, во второй раз переводили с сотрудника на сотрудника, только третий сотрудник проконсультировал.',
+								source: 'alterra'
+							})
+							
+					+pagination
+						
+
+
+		+e.area
+			+b.container
+				+feautures
+
+
+
+
+
+
+		+footer

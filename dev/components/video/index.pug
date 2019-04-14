@@ -1,0 +1,19 @@
+include ../global.pug
+include data.pug
+
+mixin video(data)
+  - var id = data.id;
+  +b.video(data-open='video'+id)
+    +e.preview
+      img(src="pictures/"+data.preview)
+        
+      +e.BUTTON.play
+        +icon('icons-play')
+        
+    +b.modal._zoom(data-modal='video'+id)
+      +b.close._large._highlight(data-izimodal-close)
+      +e.content
+        video(controls)
+          source(src="video/video.mp4" type="video/mp4")
+    
+    

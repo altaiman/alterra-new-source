@@ -1,0 +1,244 @@
+//- includes
+include components/head/index.pug
+include components/header/index.pug
+include components/svg/index.pug
+
+include components/breadcrumbs/index.pug
+include components/card/index.pug
+include components/gallery/index.pug
+include components/catalog/index.pug
+include components/catalog/nav.pug
+include components/description/index.pug
+include components/feautures/index.pug
+
+include components/footer/index.pug
+
+//- end includes
+
+//- variables page 
+- title = 'Котел твердотопливный 20кВт, Куппер ОК-20 (теплодар)';
+
+doctype html
+html
+	+head
+	+b.BODY.page
+		+symbols
+		+header
+		
+		+e.content
+		
+			+b.container._page
+				+e.content
+					+e.line
+						+catalog-nav
+						+breadcrumbs(['Лакокрасочные материалы, пены, герметики',
+													'Эмали',
+													title])
+													
+					+b.A.btn._back(href="/") Назад
+													
+					+e.line
+						+caption({title: title})
+						
+					+card-page
+									
+					+e.section
+						+b.anchors._links
+							+e.A.item(href="#needs") Вам могут понадобиться
+							+e.A.item(href="#characteristic") Характеристики
+							+e.A.item(href="#description") Описание
+							+e.A.item(href="#service") Услуги
+					
+					+e.section.needs__(id="needs" data-adaptive="hide")
+						+b.SPAN.caption._regular Вам могут понадобиться
+						+e.tags
+							+needs([
+								'Гвозди', 'Сайдинг', 'Утеплитель', 'Стремянка', 'Линолеум', 
+								'Гвоздики', 'Черепица', 'Сайдинг', 'Утеплитель', 'Стремянка',
+								'Утеплитель'
+							])
+						+e.catalog
+							+card(dataCard['item1'])
+							+card(dataCard['item3'])
+							+card(dataCard['item6'])
+							+card(dataCard['item2'])
+							+card(dataCard['item5'])
+
+					+e.section._flex(data-adaptive="hide")
+						+e.section-block(id="characteristic")
+							+b.SPAN.caption._regular Характеристики
+							
+							+characteristic-full([
+		            {
+		              name: 'Вид товара',
+		              value: 'FineBer'
+		            },{
+		              name: 'Производитель',
+		              value: 'FineBer'
+		            },{
+		              name: 'Присоединительная резьба',
+		              value: '1/2 дюйма'
+		            },{
+		              name: 'Вид топлива',
+		              value: 'Уголь, дрова'
+		            },{
+		              name: 'Площадь обогрева при высоте',
+		              value: '200 м²'
+		            },{
+		              name: 'Вид товара',
+		              value: 'FineBer'
+		            },{
+		              name: 'Производитель',
+		              value: 'FineBer'
+		            },{
+		              name: 'Присоединительная резьба',
+		              value: '1/2 дюйма'
+		            },{
+		              name: 'Вид топлива',
+		              value: 'Уголь, дрова'
+		            },{
+		              name: 'Производитель',
+		              value: 'FineBer'
+		            },{
+		              name: 'Присоединительная резьба',
+		              value: '1/2 дюйма'
+		            },
+		          ])
+							
+						+e.section-block(id="description")
+							+b.SPAN.caption._regular Описание
+							
+							+description({
+								short: 'Универсальные котлы линейки «Куппер» — это мощное одноконтурное отопительное оборудование в компактном исполнении. Благодаря своей эффективности и надежности котлы «Куппер» завоевали доверие покупателя и прочно занимают лидирующие позиции по продажам.</p><p>Отопительный котел в модификации на 20 кВт «КУППЕР ОК 20» работает в любой системе отопления помещений площадью до 200 м².</p><p>Котел «КУППЕР ОК 20» предназначен не только для работы на твердом топливе – на дровах и угле, но и имеет возможность автоматизации при переходе на газ или пеллеты с помощью устанавливаемых горелок «Теплодар».',
+								all: 'Твердотопливные котлы — это высокоэффективное оборудование, используемое для отопления коттеджей, административных зданий и промышленных объектов. КПД отопительных котлов на твердом топливе составляет 60-80%. Но в противовес более низкому КПД такие котлы имеют несомненное преимущество – это топливо.'
+							})
+							
+					+e.section(data-adaptive="hide")
+						+b.SPAN.caption._regular Похожие товары
+						+e.section-catalog
+							+card-block(dataCard['item5'])
+							+card-block(dataCard['item4'])
+							+card-block(dataCard['item7'])
+							+card-block(dataCard['item2'])
+							
+					+e.section(data-adaptive="hide")
+						+b.SPAN.caption._regular Недавно просмотренные
+						+e.section-catalog
+							+card(dataCard['item1'])
+							+card(dataCard['item3'])
+							+card(dataCard['item3'])
+							+card(dataCard['item2'])
+							
+					+e.mobile
+						+e.section
+							+b.anchors(data-tabs="info")
+								+e.SPAN.item Характеристики
+								+e.SPAN.item Описание
+							+b.DIV(data-tabs-content="info")
+								+b.DIV
+									+characteristic-full([
+										{
+											name: 'Вид товара',
+											value: 'FineBer'
+										},{
+											name: 'Производитель',
+											value: 'FineBer'
+										},{
+											name: 'Присоединительная резьба',
+											value: '1/2 дюйма'
+										},{
+											name: 'Вид топлива',
+											value: 'Уголь, дрова'
+										},{
+											name: 'Площадь обогрева при высоте',
+											value: '200 м²'
+										},{
+											name: 'Вид товара',
+											value: 'FineBer'
+										},{
+											name: 'Производитель',
+											value: 'FineBer'
+										},{
+											name: 'Присоединительная резьба',
+											value: '1/2 дюйма'
+										},{
+											name: 'Вид топлива',
+											value: 'Уголь, дрова'
+										},{
+											name: 'Производитель',
+											value: 'FineBer'
+										},{
+											name: 'Присоединительная резьба',
+											value: '1/2 дюйма'
+										},
+									])
+								
+								+b.DIV
+									+description({
+										short: 'Универсальные котлы линейки «Куппер» — это мощное одноконтурное отопительное оборудование в компактном исполнении. Благодаря своей эффективности и надежности котлы «Куппер» завоевали доверие покупателя и прочно занимают лидирующие позиции по продажам.</p><p>Отопительный котел в модификации на 20 кВт «КУППЕР ОК 20» работает в любой системе отопления помещений площадью до 200 м².</p><p>Котел «КУППЕР ОК 20» предназначен не только для работы на твердом топливе – на дровах и угле, но и имеет возможность автоматизации при переходе на газ или пеллеты с помощью устанавливаемых горелок «Теплодар».',
+										all: 'Твердотопливные котлы — это высокоэффективное оборудование, используемое для отопления коттеджей, административных зданий и промышленных объектов. КПД отопительных котлов на твердом топливе составляет 60-80%. Но в противовес более низкому КПД такие котлы имеют несомненное преимущество – это топливо.'
+									})
+									
+						+b.m-toggle
+							+e.head.toggle._close(data-toggle="m-toggle__content")
+								+e.SPAN.name Самовывоз
+								
+							+e.content
+								p Информация
+								
+						+b.m-toggle
+							+e.head.toggle._close(data-toggle="m-toggle__content")
+								+e.SPAN.name Доставка
+								
+							+e.content
+								p Информация
+								
+						+b.m-toggle
+							+e.head.toggle._close(data-toggle="m-toggle__content")
+								+e.SPAN.name Оплата
+								
+							+e.content
+								p Информация
+								
+						+b.m-toggle
+							+e.head.toggle._close(data-toggle="m-toggle__content")
+								+e.SPAN.name Похожие товары
+								
+							+e.content
+								p Информация
+								
+						+b.m-toggle
+							+e.head.toggle._close(data-toggle="m-toggle__content")
+								+e.SPAN.name Недавно просмотренные
+								
+							+e.content
+								p Информация
+								
+						+b.m-toggle
+							+e.head.toggle._close(data-toggle="m-toggle__content")
+								+e.SPAN.name Вам могут понадобиться
+								
+							+e.content
+								+e.content-scroll
+									+needs([
+										'Гвозди', 'Сайдинг', 'Утеплитель', 'Стремянка', 'Линолеум', 
+										'Гвоздики', 'Черепица', 'Сайдинг', 'Утеплитель', 'Стремянка',
+										'Утеплитель'
+									])
+									
+									+e.list
+										+card-block(dataCard['item5'])
+										+card-block(dataCard['item4'])
+										+card-block(dataCard['item3'])
+									
+							
+									
+						
+
+		+e.area
+			+b.container
+				+feautures
+					
+		+footer
+		
+		

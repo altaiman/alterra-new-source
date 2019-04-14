@@ -1,0 +1,14 @@
+include ../global.pug
+include data.pug
+
+
+mixin search
+  +b.search
+    +e.field
+      input(type="search" placeholder="Поиск товаров по каталогу")
+    +e.BUTTON.btn
+      +icon('icons_search')
+    block
+    
+      
+  

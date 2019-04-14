@@ -1,0 +1,22 @@
+include ../global.pug
+include data.pug
+
+mixin range(options)
+  +b.range
+    +e.INPUT.slider&attributes(options)
+    +e.fields
+      +field({
+        name: 'от',
+        cls: '_half',
+        attr: {
+          'data-input': 'min'
+        }
+      })
+      
+      +field({
+        name: 'до',
+        cls: '_half',
+        attr: {
+          'data-input': 'max'
+        }
+      })

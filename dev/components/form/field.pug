@@ -1,0 +1,15 @@
+include ../global.pug
+include data.pug
+
+mixin field(data)
+  +b.LABEL.field(class=data.cls)
+    +e.DIV.input
+      +e.INPUT&attributes(data.attr)(type="text")
+      +e.SPAN.placeholder #{data.name}
+  
+mixin textarea(data)
+  +b.LABEL.field(class=data.cls)
+    +e.DIV.input._textarea
+      +e.TEXTAREA&attributes(data.attr)(type="text")
+      +e.SPAN.placeholder #{data.name}
+  

@@ -1,0 +1,125 @@
+include ../global.pug
+
+include city.pug
+include lk.pug
+include pay.pug
+include logotype.pug
+include m-menu.pug
+include fix.pug
+
+include ../ielement/index.pug
+
+include ../search/index.pug
+include ../search/results.pug
+
+mixin header
+  +b.HEADER.header
+      +header-fix
+      +e.top
+        +b.container._flex
+          +e.block
+            +city
+          +e.block
+            +b.links
+              a(href="#about") О компании
+              a(href="#delivery") Доставка
+            +b.BUTTON.btn._ico._transparent
+              +e.SPAN.ico
+                +icon('icons_location', size={ width: '12px', height: '14px' })
+              span Магазины
+            +pay
+            +b.tip
+              +e.A.__name.btn__._highlight._ico(href="#")
+                +e.SPAN.ico
+                  +icon('icons_club', size={ width: '19px', height: '14px' })
+                span Стройклуб
+              +e.hidecontent
+                +e.hidecontent-main
+                  p.
+                    Программа лояльности для покупателей компании Альтерра. 
+                    Члены клуба получают фиксированные скидки на товары, а 
+                    также оплачивают покупки накопленными бонусами
+                +e.hidecontent-end
+                  +e.A.link(href="#") Подробнее
+            +lk
+      
+      +e.body
+        +b.container._flex
+          +logotype('header')
+          +search
+            +results
+          
+          +ielement({
+            name: '+7 (3852) 548-333',
+            val: 'Без выходных',
+            icon: {
+              name: 'icons_tel',
+              size: {
+                width: '22px',
+                height: '24px'
+              }
+            },
+            link: 'tel:+73852548333'
+          })
+          
+          +ielement({
+            name: 'Корзина',
+            val: '99 999 руб.',
+            icon: {
+              name: 'icons_cart',
+              size: {
+                width: '29px',
+                height: '24px'
+              }
+            },
+            link: '#basket',
+            counter: 33
+          })
+          
+      +e.mobile
+        +e.mobile-block
+          +m-menu
+                      
+          +logotype_mobile
+          
+        +e.mobile-block
+        
+          +ielement({
+            icon: {
+              name: 'icons_tel',
+              size: {
+                width: '18px',
+                height: '19px'
+              }
+            },
+            link: 'tel:+73852548333'
+          })
+          
+          +ielement({
+            icon: {
+              name: 'icons_user',
+              size: {
+                width: '18px',
+                height: '19px'
+              }
+            },
+            link: '#login'
+          })
+          
+          +ielement({
+            icon: {
+              name: 'icons_cart',
+              size: {
+                width: '23px',
+                height: '19px'
+              }
+            },
+            link: '#basket',
+            counter: 33
+          })
+          
+        +search
+          
+            
+        
+        

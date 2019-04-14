@@ -1,0 +1,331 @@
+include ../global.pug
+include data.pug
+
+include availability.pug
+include counter.pug
+include tags.pug
+include page.pug
+include ../tip/index.pug
+include ../svg/index.pug
+
+mixin card(data)
+  +b.card
+    +e.wrapper
+      +e.common
+        +b.vendor-code <span>код:</span> #{data.code}
+        +availability(data.availability)
+      +e.A.main(href="/")
+        - if (data.action)
+          +e.message(class=data.action.style)
+            p #{data.action.message}
+        +e.DIV.image
+          img(src=global.paths.pictures+data.jpg)
+        +e.title #{data.title}
+      +e.DIV.info
+        - if (data.oldPrice == true)
+          +e.info-line
+            +e.info-cell
+              +e.price-name
+                span цена:
+                +b.price-type
+                  +e.BUTTON.option м²
+                  +e.BUTTON.option._active м.п.
+            +e.info-cell
+              +e.SPAN.price <s>#{data.price[0]} р.</s>
+          +e.info-line
+            +e.info-cell
+              span 
+            +e.info-cell
+              +e.SPAN.price._club #{data.price[1]} р.
+              +tip(tips.bonus)
+        - else
+          +e.info-line
+            +e.info-cell
+              +e.price-name
+                span цена:
+                +b.price-type
+                  +e.BUTTON.option м²
+                  +e.BUTTON.option._active м.п.
+            +e.info-cell
+              +e.SPAN.price #{data.price[0]} р.
+          +e.info-line
+            +e.info-cell
+              span по карте СтройКлуба:
+            +e.info-cell
+              +e.SPAN.price._club #{data.price[1]} р.
+              +tip(tips.bonus)
+      +e.buy
+        +counter(data.amount)
+        +b.BUTTON.btn.btn_in-cart 
+          +icon('icons_shopping-cart')
+      +e.controls
+        - if (data.compare == true)
+          +b.SPAN.action(data-drop)
+              +e.ico(data-drop="trigger")
+                +icon('icons_compare', size={width: '12px', height: '13px'})
+              +e.SPAN.name Сравнить
+              +b.drop._mobile
+                +b.BUTTON.close._dark
+                +e.main
+                  +b.BUTTON.btn._size-s._white Перейти к сравнению
+                  +b.BUTTON.btn._size-s._white Удалить из сравнения
+        - else
+          +b.SPAN.action._active
+              +e.ico
+                +icon('icons_compare', size={width: '12px', height: '13px'})
+              +e.SPAN.name К сравнению
+        
+        +b.SPAN.action 
+          +e.ico
+            +icon('icons_bookmark', size={width: '10px', height: '14px'})
+          +e.SPAN.name В смету
+          
+          
+mixin card-block(data)
+  +b.card._block
+    +e.wrapper
+      +e.A.main(href="/")
+        +e.DIV.image
+          img(src=global.paths.pictures+data.jpg)
+        +e.title #{data.title}
+      +e.controls
+        - if (data.compare == true)
+          +b.SPAN.action 
+              +e.ico
+                +icon('icons_compare', size={width: '12px', height: '13px'})
+              +e.SPAN.name Сравнить
+        - else
+          +b.SPAN.action._active
+              +e.ico
+                +icon('icons_compare', size={width: '12px', height: '13px'})
+              +e.SPAN.name К сравнению
+              
+      +e.DIV.info
+        - if (data.oldPrice == true)
+          +e.info-line
+            +e.info-cell
+              +e.price-name
+                span цена:
+                +b.price-type
+                  +e.BUTTON.option м²
+                  +e.BUTTON.option._active м.п.
+            +e.info-cell
+              +e.SPAN.price <s>#{data.price[0]} р.</s>
+          +e.info-line
+            +e.info-cell
+              span 
+            +e.info-cell
+              +e.SPAN.price._club #{data.price[1]} р.
+              +tip(tips.bonus)
+        - else
+          +e.info-line
+            +e.info-cell
+              +e.price-name
+                span цена:
+                +b.price-type
+                  +e.BUTTON.option м²
+                  +e.BUTTON.option._active м.п.
+            +e.info-cell
+              +e.SPAN.price #{data.price[0]} р.
+          +e.info-line
+            +e.info-cell
+              span по карте СтройКлуба:
+            +e.info-cell
+              +e.SPAN.price._club #{data.price[1]} р.
+              +tip(tips.bonus)
+          
+mixin card-list(data)
+  +b.card._list
+    +e.wrapper
+      +e.common
+        +b.vendor-code <span>код:</span> #{data.code}
+        +availability(data.availability)
+      +e.main
+        +e.A.image(href="#")
+          - if (data.action)
+            +e.message(class=data.action.style)
+              p #{data.action.message}
+          img(src=global.paths.pictures+data.jpg)
+        +e.info
+          +e.A.title(href="#") #{data.title} 
+          
+          +flist([{
+            tip: {
+              text: 'Доставка'
+            }
+          },{},{}]) 
+              
+          +e.controls
+            - if (data.compare == true)
+              +b.SPAN.action 
+                  +e.ico
+                    +icon('icons_compare', size={width: '12px', height: '13px'})
+                  +e.SPAN.name Сравнить
+            - else
+              +b.SPAN.action._active
+                  +e.ico
+                    +icon('icons_compare', size={width: '12px', height: '13px'})
+                  +e.SPAN.name К сравнению
+                  
+            +b.SPAN.action 
+              +e.ico
+                +icon('icons_bookmark', size={width: '10px', height: '14px'})
+              +e.SPAN.name В смету
+              
+        +e.info._buy
+          - if (data.oldPrice == true)
+            +e.info-line
+              +e.info-cell
+                +e.price-name
+                  span цена:
+                  +b.price-type
+                    +e.BUTTON.option м²
+                    +e.BUTTON.option._active м.п.
+              +e.info-cell
+                +e.SPAN.price <s>#{data.price[0]} р.</s>
+            +e.info-line
+              +e.info-cell
+                span 
+              +e.info-cell
+                +e.SPAN.price._club #{data.price[1]} р.
+                +tip(tips.bonus)
+          - else
+            +e.info-line
+              +e.info-cell
+                +e.price-name
+                  span цена:
+                  +b.price-type
+                    +e.BUTTON.option м²
+                    +e.BUTTON.option._active м.п.
+              +e.info-cell
+                +e.SPAN.price #{data.price[0]} р.
+            +e.info-line
+              +e.info-cell
+                span по карте СтройКлуба:
+              +e.info-cell
+                +e.SPAN.price._club #{data.price[1]} р.
+                +tip(tips.bonus)
+                
+          +e.buy
+            +counter(data.amount)
+            +b.BUTTON.btn.btn_in-cart В корзину
+              +icon('icons_shopping-cart')
+              
+      +tags(data.tags)
+      
+      
+mixin card-table(data)
+  +b.card._table
+    +e.wrapper
+      +e.common
+        +availability(data.availability)
+        +b.vendor-code <span>код:</span> #{data.code}
+        
+      +e.controls
+        - if (data.compare == true)
+          +b.SPAN.action 
+              +e.ico
+                +icon('icons_compare', size={width: '12px', height: '13px'})
+              +e.SPAN.name Сравнить
+        - else
+          +b.SPAN.action._active
+              +e.ico
+                +icon('icons_compare', size={width: '12px', height: '13px'})
+              +e.SPAN.name К сравнению
+
+        +b.SPAN.action 
+          +e.ico
+            +icon('icons_bookmark', size={width: '10px', height: '14px'})
+          +e.SPAN.name В смету
+        
+      +e.A.image(href="#")
+        img(src=global.paths.pictures+data.jpg)
+          
+      +e.main
+        +e.DIV.info._title
+          +e.A.title(href="#") #{data.title} 
+          - if (data.action)
+            +e.message(class=data.action.style)
+              p #{data.action.message}
+              
+        +e.DIV.info._price
+          - if (data.oldPrice == true)
+            +e.info-line
+              +e.info-cell
+                +e.price-name
+                  span цена:
+                  +b.price-type
+                    +e.BUTTON.option м²
+                    +e.BUTTON.option._active м.п.
+              +e.info-cell
+                +e.SPAN.price <s>#{data.price[0]} р.</s>
+            +e.info-line
+              +e.info-cell
+                span 
+              +e.info-cell
+                +e.SPAN.price._club #{data.price[1]} р.
+                +tip(tips.bonus)
+          - else
+            +e.info-line
+              +e.info-cell
+                +e.price-name
+                  span цена:
+                  +b.price-type
+                    +e.BUTTON.option м²
+                    +e.BUTTON.option._active м.п.
+              +e.info-cell
+                +e.SPAN.price #{data.price[0]} р.
+            +e.info-line
+              +e.info-cell
+                span по карте СтройКлуба:
+              +e.info-cell
+                +e.SPAN.price._club #{data.price[1]} р.
+                +tip(tips.bonus)
+              
+        +e.DIV.info._buy
+          +e.buy
+            p Кратность: <strong>152</strong>
+            +counter(data.amount)
+            +b.BUTTON.btn._in-cart
+              +icon('icons_shopping-cart')
+            
+              
+mixin card-search(data)
+  +b.A.card._search(href="/")
+    +e.wrapper
+      +e.DIV.main
+        +e.DIV.image
+          img(src=global.paths.pictures+data.jpg)
+      +e.DIV.info
+        +e.common
+          +b.vendor-code <span>код:</span> #{data.code}
+          +b.vendor-code <span>Вес:</span> 1.5 кг.
+          
+        +e.title #{data.title}
+        
+        - if (data.oldPrice == true)
+          +e.info-line
+            +e.info-cell
+              +e.price-name
+                span цена:
+            +e.info-cell
+              +e.SPAN.price #{data.price[0]} р.
+          +e.info-line._gray
+            +e.info-cell
+              +e.price-name
+                span по карте:
+            +e.info-cell
+              +e.SPAN.price._club #{data.price[1]} р.
+        - else
+          +e.info-line
+            +e.info-cell
+              +e.price-name
+                span цена:
+            +e.info-cell
+              +e.SPAN.price #{data.price[0]} р.
+          +e.info-line
+            +e.info-cell
+              +e.price-name
+                span по карте:
+            +e.info-cell
+              +e.SPAN.price._club #{data.price[1]} р.

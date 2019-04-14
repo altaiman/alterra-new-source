@@ -1,0 +1,127 @@
+include ../global.pug
+
+include ../caption/index.pug
+include ../header/logotype.pug
+include ../modal/index.pug
+
+include subscribe.pug
+include nav.pug
+include contacts.pug
+include social.pug
+
+mixin footer
+  +b.FOOTER.footer
+    +e.top
+      +b.container
+        +subscribe
+      
+    +e.body
+      +b.container._flex._flex-top
+        +e.block
+          +fnav
+          
+        +e.block
+          +fcontacts
+        
+    +e.bot
+      +b.container._flex._flex-top
+        +b.footer-info
+          +logotype
+        +b.footer-info
+          +caption({ title: 'Обратная связь', size: 0})
+          
+          +e.list
+            +b.A.label(href="#yandex")
+              svg(width="85px")
+                use(xlink:href="#yandex-market")
+            +b.A.label(href="#2gis")
+              svg(width="46px")
+                use(xlink:href="#2gis")
+            +b.A.label(href="#flamp")
+              svg(width="68px")
+                use(xlink:href="#flamp")
+            +b.A.label._wico(href="#review")
+              +e.ico
+                svg
+                  use(xlink:href="#alterra-minilogo")
+              +e.SPAN.name Оставить отзыв
+            
+          
+        +b.footer-info
+          +caption({ title: 'Принимаем к оплате', size: 0})
+          
+          +e.list
+            +b.SPAN.label
+              img(src="img/mir.png" style="height: 15px;")
+            +b.SPAN.label
+              svg(width="56px")
+                use(xlink:href="#visa")
+            +b.SPAN.label
+              svg(width="33px")
+                use(xlink:href="#mastercard")
+          
+        +b.footer-info
+          +caption({ title: 'Присоединяйтесь', size: 0})
+          +social
+      
+    +e.mobile
+      +e.mobile-top
+        +b.A.btn._sub._wide Отзывы / написать отзыв
+        +b.A.btn._sub О компании
+        +b.A.btn._sub Магазины
+      +e.UL.links(data-drop="data-drop")
+        +e.SPAN.link._ico(data-drop="trigger") 
+          +e.SPAN.link-ico 
+            +icon('icons_wallet', size={ width: '14px', height: '14px' })    
+          +e.SPAN.link-name Оплатить заказ картой
+          +b.DIV.drop
+            +e.main
+              +e.SPAN.caption Здесь вы можете оплатить электронным способом заказ, подтвержденный менеджером
+              +e.FORM.form
+                +e.fields
+                  +b.LABEL.field._order._simple
+                    +e.input
+                      +b.INPUT
+                      +e.SPAN.placeholder Номер заказа
+                  +b.LABEL.field._tel._simple
+                    +e.input
+                      +b.INPUT
+                      +e.SPAN.placeholder +7
+                +e.SPAN.text
+                  i Для оплаты заказа - введите данные, которые были указаны при оформлении
+                +b.BUTTON.btn._size-m Найти
+      
+        +e.A.link(href="#") 
+          +e.SPAN.link-name СтройКлуб Альтерра
+        +e.A.link(href="#") 
+          +e.SPAN.link-name Расчет проекта с экспертом
+        +e.A.link(href="#") 
+          +e.SPAN.link-name Варианты оплаты
+        +e.A.link(href="#") 
+          +e.SPAN.link-name Доставка
+        +e.A.link(href="#") 
+          +e.SPAN.link-name Услуги
+        +e.A.link(href="#") 
+          +e.SPAN.link-name Возврат товара
+        +e.A.link(href="#") 
+          +e.SPAN.link-name Полная версия сайта
+    
+    +e.end
+      +b.container._flex
+        p Все права защищены © 2009--2018
+        p Нашли ошибку в тексте? Выделите ошибку мышкой и нажмите на клавиатуре Ctrl + Enter
+        p Разработка сайта 
+          a(href="https://letsrock.pro/" target="_blank" class="developer")
+            svg
+              use(xlink:href="#letsrock")
+    +e.end._mobile
+      +b.container
+        p «Альтерра» - все для стройки и ремонта.<br>Все права защищены © 2009-2018<br>Разработка сайта Let's Rock
+                
+  +b.BUTTON.to-top
+    +icon('icons-arrow', size={width:'12px',height:'15px'})
+    
+  +modal-call
+    
+  script(src="js/libs.js")
+  script(src="js/script.js")

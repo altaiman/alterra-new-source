@@ -1,0 +1,31 @@
+include ../global.pug
+include data.pug
+
+mixin review(data)
+  +b.review
+    +e.side
+      +e.photo
+        img(src='pictures/reviews/'+data.photo)
+    +e.main
+      +e.head
+        +b.SPAN.caption._small= data.author
+        +e.SPAN.date= data.date
+        - if (data.source)
+          +e.source
+            case data.source
+              when 'yandex'
+                +b.A.label(href="#yandex")
+                  img(src="img/yandex.svg")
+              when '2gis'
+                +b.A.label(href="#2gis")
+                  img(src="img/2gis.svg")
+              when 'flamp'
+                +b.A.label(href="#flamp")
+                  img(src="img/flamp.svg")
+              when 'alterra'
+                +b.A.label(href="#review")
+                  img(src="img/alterra-lbl.svg")
+              default
+                +b.A.link(href=data.source.link)= data.source.name
+      +e.content
+        p= data.text

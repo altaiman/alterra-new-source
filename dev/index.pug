@@ -1,0 +1,179 @@
+//- includes
+include components/head/index.pug
+include components/header/index.pug
+include components/svg/index.pug
+
+include components/breadcrumbs/index.pug
+include components/card/index.pug
+include components/filter/index.pug
+include components/catalog/index.pug
+include components/catalog/nav.pug
+include components/pagination/index.pug
+include components/description/index.pug
+include components/feautures/index.pug
+include components/promo/index.pug
+include components/review/index.pug
+include components/video/index.pug
+include components/modal/index.pug
+
+include components/footer/index.pug
+
+//- end includes
+
+//- variables page 
+- title = 'Главная';
+
+doctype html
+html
+	+head
+	+b.BODY.page
+		+symbols
+		+header
+		
+		+e.content
+			+b.container
+				+e.content._index
+					+e.ASIDE.side
+						+catalog-nav-index
+						+promo-side
+
+					+e.main
+						+promo
+						+promo-mobile
+						
+						+e.section._flex(data-adaptive="hide")
+							+b.SPAN.caption._regular Акции
+							+b.catalog._index
+								+e.A.more.btn._tr-border(href="#") Смотреть все акции
+								+e.list
+									+card(dataCard['item1'])
+									+card(dataCard['item5'])
+									+card(dataCard['item2'])
+									+card(dataCard['item3'])
+									+card(dataCard['item4'])
+					
+					+e.mobile
+						+catalog-nav-mobile
+									
+		+e.content._bg(data-adaptive="hide")
+			+b.container
+				+b.actions
+					+e.list
+						+b.A.banner._action(href="#")
+							img(src="pictures/promo-a.jpg")
+						+b.A.banner._action(href="#")
+							img(src="pictures/promo-a.jpg")
+						+b.A.banner._action(href="#")
+							img(src="pictures/promo-a.jpg")
+						+b.A.banner._action(href="#")
+							img(src="pictures/promo-a.jpg")
+								
+					+b.BUTTON.btn._update Показать еще
+					
+		+e.content(data-adaptive="hide")
+			+b.container
+				+b.SPAN.caption._regular Отзывы наших покупателей
+				
+				+e.section._flex
+					+e.section-block
+						+b.reviews._index
+							+e.filter
+								+e.labels
+									+b.A.label(href="#yandex")
+										svg(width="85px")
+											use(xlink:href="#yandex-market")
+									+b.A.label(href="#2gis")
+										svg(width="46px")
+											use(xlink:href="#2gis")
+									+b.A.label(href="#flamp")
+										svg(width="68px")
+											use(xlink:href="#flamp")
+									+b.A.label(href="#yandex")
+										svg(width="85px")
+											use(xlink:href="#yandex-market")
+									+b.A.label(href="#2gis")
+										svg(width="46px")
+											use(xlink:href="#2gis")
+									+b.A.label(href="#flamp")
+										svg(width="68px")
+											use(xlink:href="#flamp")
+									+b.A.label(href="#yandex")
+										svg(width="85px")
+											use(xlink:href="#yandex-market")
+									+b.A.label(href="#2gis")
+										svg(width="46px")
+											use(xlink:href="#2gis")
+									+b.A.label(href="#flamp")
+										svg(width="68px")
+											use(xlink:href="#flamp")
+									+b.A.label(href="#yandex")
+										svg(width="85px")
+											use(xlink:href="#yandex-market")
+									+b.A.label(href="#2gis")
+										svg(width="46px")
+											use(xlink:href="#2gis")
+									+b.A.label(href="#flamp")
+										svg(width="68px")
+											use(xlink:href="#flamp")
+							+e.list
+								+review({
+									author: 'Михаил',
+									photo: 'michael.jpg',
+									date: '20 сентября в 12:30',
+									text: 'Мне понравилось обслуживание. Искал кирпич, нужный мне есть вналичии, доставку сделали бесплатно. Привезли в этот же день, за что отдельное спасибо.'
+								})
+								
+								+review({
+									author: 'Дарья',
+									photo: 'dasha.jpg',
+									date: '21 сентября в 09:30',
+									text: 'Обслуживание по телефону ( оператор Дарья) -супер. Трубку взяли за пару секунд, проконсультировали, сориентировали по наличию и по цене! В отличае от, например, Дюйма, там первый раз после 5-ти минутного ожидания сбросили, во второй раз переводили с сотрудника на сотрудника, только третий сотрудник проконсультировал.'
+								})
+								
+								+review({
+									author: 'Ольга',
+									photo: 'dasha.jpg',
+									date: '21 сентября в 10:00',
+									text: 'Мне понравилось обслуживание. Искал кирпич, нужный мне есть вналичии, доставку сделали бесплатно. Привезли в этот же день, за что отдельное спасибо.'
+								})
+								
+								+review({
+									author: 'Михаил',
+									photo: 'michael.jpg',
+									date: '20 сентября в 12:30',
+									text: 'Мне понравилось обслуживание. Искал кирпич, нужный мне есть вналичии, доставку сделали бесплатно. Привезли в этот же день, за что отдельное спасибо.'
+								})
+							
+							+b.A.btn._tr-border Все отзывы
+							
+					+e.section-block
+						+b.SPAN.caption._regular._sub Видео-отзывы от наших покупателей
+						+video({
+							preview: 'preview.jpg',
+							video: 'https://www.youtube.com/embed/1G4isv_Fylg?autoplay=1',
+							id: 1
+						})
+						+video({
+							preview: 'preview.jpg',
+							video: 'https://www.youtube.com/embed/1G4isv_Fylg?autoplay=1',
+							id: 2
+						})
+					
+					
+									
+		+e.area
+			+b.container
+				+description({
+					caption: 'Интернет-магазин стройматериалов с доставкой tg-alterra.ru',
+					short: 'Ассортимент интернет-магазина Альтерра состоит из разных групп товаров строительных и отделочных материалов. Вы всегда  можете купить стройматериалы по низким ценам с доставкой по Барнаулу и Бийску в интернет-магазине Альтерра. Все товары удобно размещены по категориям, благодаря чему найти то, что вам надо не составит труда. <ul><li>Cайдинг, кровля, водосток</li><li>Теплоизоляционные материалы (утеплитель)</li><li>Кирпич,  цемент,  газобетон и металлопрокат</li></ul>',
+					all: 'Ассортимент интернет-магазина Альтерра состоит из разных групп товаров строительных и отделочных материалов. Вы всегда  можете купить стройматериалы по низким ценам с доставкой по Барнаулу и Бийску в интернет-магазине Альтерра. Все товары удобно размещены по категориям, благодаря чему найти то, что вам надо не составит труда. <ul><li>Cайдинг, кровля, водосток</li><li>Теплоизоляционные материалы (утеплитель)</li><li>Кирпич,  цемент,  газобетон и металлопрокат</li></ul>3'
+				})
+
+		+e.area
+			+b.container
+				+feautures
+		
+		+b.A.banner._index(href="#")
+			img(src="pictures/index-banner.jpg")
+
+		+footer

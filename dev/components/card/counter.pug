@@ -1,0 +1,52 @@
+include ../global.pug
+
+mixin counter(max)
+  +b.counter
+    +e.BUTTON.btn._minus
+    +e.field
+        input(type="number" value="1" min="1" max="10")
+    +e.BUTTON.btn._plus
+    +b.tip
+      +e.DIV.hidecontent
+        +b.BUTTON.close(data-close)
+        +e.SPAN.hidecontent-caption Товар продается в шт.
+        +e.hidecontent-main
+          +e.UL.vlist
+            +e.LI 
+              span м<sup>2</sup>
+              span 
+                strong 2,47
+            +e.LI 
+              span шт.
+              span 
+                strong 1
+            +e.LI 
+              span Итого
+              span 
+                strong 85 900 р.
+
+
+mixin counter-big(max)
+  +b.counter._big
+    +e.BUTTON.btn._minus
+    +e.field
+        input(type="number" value="1" min="1" max="10")
+    +e.BUTTON.btn._plus
+    +b.tip
+      +e.DIV.hidecontent
+        +b.BUTTON.close(data-close)
+        +e.SPAN.hidecontent-caption Товар продается в шт.
+        +e.hidecontent-main
+          +e.UL.vlist
+            +e.LI 
+              span м<sup>2</sup>
+              span 
+                strong 2,47
+            +e.LI 
+              span шт.
+              span 
+                strong 1
+            +e.LI 
+              span Итого
+              span 
+                strong 85 900 р.

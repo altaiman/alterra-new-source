@@ -1,0 +1,53 @@
+//- includes
+include components/head/index.pug
+include components/header/index.pug
+include components/svg/index.pug
+
+include components/breadcrumbs/index.pug
+include components/card/index.pug
+include components/filter/index.pug
+include components/catalog/index.pug
+include components/catalog/nav.pug
+include components/pagination/index.pug
+include components/description/index.pug
+include components/feautures/index.pug
+
+include components/footer/index.pug
+
+//- end includes
+
+//- variables page 
+- title = 'Страницы вёрстки';
+
+doctype html
+html
+	+head
+	+b.BODY.page
+		+symbols
+		+header
+		
+		+b.container
+			+e.content
+				
+				+b.pages
+					+caption({title: title})
+				
+					a(href="index.html" target="_blank") Главная
+					a(href="reviews.html" target="_blank") Отзывы
+				
+				+b.pages
+					a(href="category.html" target="_blank") Категории
+					a(href="catalog.html" target="_blank") Каталог
+					a(href="catalog-list.html" target="_blank") Каталог - список
+					a(href="catalog-table.html" target="_blank") Каталог - таблица
+					
+				+b.pages
+					a(href="card.html" target="_blank") Карточка товара
+					a(href="cart.html" target="_blank") Корзина
+					
+				+b.pages
+					a(href="shop.html" target="_blank") Магазин
+			
+		+footer
+		
+		

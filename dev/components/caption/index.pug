@@ -1,0 +1,9 @@
+include data.pug
+
+mixin caption(data)
+  case data.size
+    when 0
+      +b.SPAN.caption._small= data.title  
+    default
+      +b.SPAN.caption= data.title
+    

@@ -1,0 +1,42 @@
+include ../global.pug
+include data.pug
+
+mixin shop
+  +b.shop
+    DIV.container
+      +e.welcome
+        +e.H1.title Открыт новый строительный магазин!
+        +e.welcome-logo
+          svg
+            use(xlink:href="#alterra-shop-logo")
+        p на Антона Петрова, 221г (рядом с ТЦ «Огни»)
+          strong 15 000 товаров для стройки и ремонта
+        +b.A.btn._highlight._size-sm Перейти в каталог
+
+              
+    +e.map
+      DIV.container
+        +e.map-wrapper(style="background-image: url('img/map_1360.png')")
+        
+        +e.promo
+          +e.SPAN.caption Назови прокомод
+          +e.promo-code
+            span ИНТЕРНЕТ
+          
+          p и получи подарок в магазине!
+          
+    +e.slider
+      +e.UL.slides.container.owl-carousel(data-slider="shop")
+        +e.LI.slide
+          <img src="https://tg-alterra.ru/upload/iblock/7be/7be1a2f960a82a89613bca03b8696314.JPG">
+      
+        +e.LI.slide
+          <img src="https://tg-alterra.ru/upload/iblock/670/6701bec74c7cef6ff03be660fe78eeea.JPG">
+            
+        +e.LI.slide
+          <img src="https://tg-alterra.ru/upload/iblock/91e/91e76e2e9a6500c89f7535a76f06107e.JPG">
+            
+        +e.LI.slide
+          <img src="https://tg-alterra.ru/upload/iblock/196/1964152123efb5749fb6b95f712e2529.JPG">
+
+      

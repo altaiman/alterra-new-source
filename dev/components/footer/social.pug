@@ -1,0 +1,14 @@
+include ../global.pug
+
+include ../form/index.pug
+
+
+mixin social
+  +b.social
+    +e.A.item._vk(href="#vk")
+      svg(width="22px" height="13px")
+        use(xlink:href="#vk")
+    +e.A.item._ok(href="#ok")
+      svg(width="12px" height="20px")
+        use(xlink:href="#ok")
+      

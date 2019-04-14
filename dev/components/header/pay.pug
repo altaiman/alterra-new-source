@@ -1,0 +1,32 @@
+include ../global.pug
+
+include ../svg/index.pug
+
+mixin pay
+  +b.pay(data-drop)
+    +b.BUTTON.btn._ico._transparent(data-drop="trigger")
+      +e.SPAN.ico._red
+        +icon('icons_wallet', size={ width: '14px', height: '14px' })
+      span Оплатить заказ
+    +b.drop
+      +e.main
+        +e.SPAN.caption Здесь вы можете оплатить электронным способом заказ, подтвержденный менеджером
+        +e.FORM.form
+          +e.fields
+            +field({
+              name: 'Номер заказа',
+              cls: '_order _simple'
+            })
+            
+            +field({
+              name: '+7',
+              cls: '_tel _simple'
+            })
+          
+          +e.SPAN.text
+            i Для оплаты заказа - введите данные, которые были указаны при оформлении
+          
+          +btn({
+            name: 'Найти',
+            style: btnStyle.size[1]
+          })

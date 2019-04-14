@@ -1,0 +1,5 @@
+include ../global.pug
+include data.pug
+
+mixin btn(data)
+  +b.BUTTON.btn(class=data.style class=data.size) #{data.name}

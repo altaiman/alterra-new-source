@@ -1,0 +1,94 @@
+.feautures {
+
+  .owl-stage-outer {
+    overflow: visible !important;
+  }
+
+  .tip {
+    &__hidecontent {
+      z-index: 9999999;
+      margin: 0;
+      top: -8px;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+
+      &::before {
+        top: 100%;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    z-index: 99999;
+    text-decoration: none;
+    color: currentColor;
+  }
+
+  &__item {
+    position: relative;
+    text-align: center;
+    width: 190px;
+    margin: 0 0 20px;
+    padding: 0 1%;
+
+    &:hover {
+      .feautures {
+        &__name {
+          color: @red;
+        }
+
+        &__ico {
+          opacity: 1;
+        }
+      }
+    }
+
+    .tip {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &__ico {
+    display: block;
+    margin: 0 auto 8px;
+    position: relative;
+    width: 64px;
+    height: 64px;
+    opacity: .5;
+    transition: all .2s;
+
+    svg {
+      // position: absolute;
+      // left: 50%;
+      // top: 50%;
+      // transform: translate(-50%,-50%);
+      fill: @hypertext;
+      margin-top: 22.5%;
+    }
+  }
+
+  &__name {
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    transition: all .2s;
+  }
+}

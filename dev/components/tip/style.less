@@ -1,0 +1,230 @@
+.tip {
+  position: relative;
+  z-index: 2;
+
+  &__ico {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background: @lite;
+    border-radius: 2px;
+
+    svg,
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      fill: @hypertext;
+      opacity: .5;
+      transition: all .2s;
+    }
+
+    svg {
+      max-width: 70%;
+      max-height: 70%;
+    }
+
+    img {
+      max-width: 70%;
+      max-height: 70%;
+    }
+  }
+
+  &__name {
+    line-height: 1;
+    color: @hypertext;
+    border-bottom: 1px dashed currentColor;
+    cursor: pointer;
+  }
+
+  &__hidecontent {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    margin-top: 7px;
+    margin-left: -38px;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    min-width: 202px;
+    background: rgba(0,0,0,.8);
+    color: @lite;
+    .shadow3dp();
+    text-align: left;
+    font-size: 14px;
+    border-radius: 3px;
+    transition: all .2s;
+    line-height: 1.4;
+
+    &::before {
+      position: absolute;
+      right: 52px;
+      top: -3px;
+      width: 10px;
+      height: 3px;
+      content: '';
+      background: url("@{img}/tip-before.svg");
+    }
+
+    &::after {
+      position: absolute;
+      z-index: 9;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -7px;
+      content: '';
+      width: 100%;
+      height: 7px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__hidecontent_light {
+    border: 1px solid @dark;
+    background: @white;
+    color: @typographyHight;
+    .shadow3dp();
+    width: 244px;
+    margin-left: 0;
+    left: auto;
+    transform: none;
+    right: -16px;
+
+    .tip {
+      &__vlist {
+        li {
+          border-bottom-color: @dark;
+        }
+      }
+    }
+
+    .close {
+      color: @typographyHight;
+    }
+
+    &::before {
+      top: -10px;
+      right: 20px;
+      background: none;
+      width: 0;
+      height: 0;
+      border:6px solid transparent;
+      border-bottom-color: @white;
+    }
+  }
+
+  &__hidecontent-caption {
+    display: block;
+    font-size: 12px;
+    padding: 16px 0 0 16px;
+  }
+
+  &__vlist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      border-bottom: 1px dotted currentColor;
+      margin: 0 0 8px;
+      font-size: 12px;
+
+      &:last-child {
+        border: none;
+      }
+
+      strong {
+        font-size: 14px;
+        font-weight: normal;
+      }
+    }
+  }
+
+  &__hidecontent-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    border-bottom: 1px solid @dark;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  &__hidecontent-main {
+    padding: 15px 16px 8px;
+  }
+
+  &__hidecontent-end {
+    border-top: 1px solid @lite;
+    padding: 8px 16px;
+  }
+
+  &__link {
+    // display: none;
+    text-decoration: underline;
+    color: currentColor;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__name_question {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: none;
+
+    svg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      max-width: 100%;
+      max-height: 100%;
+      fill: @alt;
+      transition: all .2s;
+    }
+
+    &:hover {
+      svg {
+        fill: @red;
+      }
+    }
+  }
+}
+
+.tip_wide {
+  .tip {
+    &__hidecontent {
+      width: 364px;
+    }
+
+    &__vlist {
+      li {
+        padding-bottom: 8px;
+        font-size: 14px;
+        color: @typographyMedium;
+
+        strong {
+          font-weight: 500;
+        }
+
+        &:first-child {
+          color: @typographyHight;
+        }
+      }
+    }
+  }
+}

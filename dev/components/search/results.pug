@@ -1,0 +1,67 @@
+include ../global.pug
+include data.pug
+include ../card/index.pug
+
+mixin results
+  +b.results
+    +e.head
+      a(href="#" class="link") Все товары Штука
+    +e.body
+      +e.side
+        +e.UL.items(data-simplebar)
+          +e.LI.item  
+            a(href="#") Фасадные панели (цокольный сайдинг) (9)
+          +e.LI.item  
+            a(href="#") Гибкая черепица
+          +e.LI.item  
+            a(href="#") Комплектующие к фасадным панелям
+          +e.LI.item  
+            a(href="#") Гибкая черепица
+          +e.LI.item  
+            a(href="#") Гибкая черепица
+          +e.LI.item  
+            a(href="#") Гибкая черепица
+          +e.LI.item  
+            a(href="#") Комплектующие к фасадным панелям
+          +e.LI.item  
+            a(href="#") Гибкая черепица
+          +e.LI.item  
+            a(href="#") Гибкая черепица
+          +e.LI.item  
+            a(href="#") Комплектующие к фасадным панелям
+          +e.LI.item  
+            a(href="#") Комплектующие к фасадным панелям
+          +e.LI.item  
+            a(href="#") Гибкая черепица
+          +e.LI.item  
+            a(href="#") Гибкая черепица
+          +e.LI.item  
+            a(href="#") Гибкая черепица
+          +e.LI.item  
+            a(href="#") Комплектующие к фасадным панелям
+          +e.LI.item  
+            a(href="#") Гибкая черепица
+          +e.LI.item  
+            a(href="#") Гибкая черепица
+          +e.LI.item  
+            a(href="#") Комплектующие к фасадным панелям
+          +e.LI.item  
+            a(href="#") Комплектующие к фасадным панелям
+            
+        +e.SPAN.all Всего: 699 товаров в 34 категориях
+        
+      +e.content(data-simplebar)
+        +e.cards
+          +card-search(dataCard['item1'])
+          +card-search(dataCard['item2'])
+          +card-search(dataCard['item3'])
+          +card-search(dataCard['item4'])
+          +card-search(dataCard['item5'])
+          +card-search(dataCard['item1'])
+          +card-search(dataCard['item2'])
+          +card-search(dataCard['item3'])
+          +card-search(dataCard['item4'])
+          +card-search(dataCard['item5'])
+        
+      
+  

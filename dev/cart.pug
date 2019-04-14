@@ -1,0 +1,89 @@
+//- includes
+include components/head/index.pug
+include components/header/index.pug
+include components/svg/index.pug
+
+include components/breadcrumbs/index.pug
+include components/card/index.pug
+include components/filter/index.pug
+include components/catalog/index.pug
+include components/catalog/nav.pug
+include components/pagination/index.pug
+include components/description/index.pug
+include components/feautures/index.pug
+include components/review/index.pug
+include components/video/index.pug
+include components/cart/index.pug
+
+include components/footer/index.pug
+
+//- end includes
+
+//- variables page 
+- title = 'Корзина';
+
+doctype html
+html
+	+head
+	+b.BODY.page
+		+symbols
+		+header
+	
+		+e.content
+
+			+b.container
+				+e.content._cart
+					+e.line
+						+breadcrumbs(['Лакокрасочные материалы, пены, герметики',
+													'Эмали',
+													title])
+					
+					+b.UL.switch(data-tabs="cart")
+						+e.LI.item
+							+e.SPAN.item-name Корзина
+							+e.SPAN.item-num 228
+						+e.LI.item
+							+e.SPAN.item-name Смета
+							+e.SPAN.item-num 6
+						+e.LI.item
+							+e.SPAN.item-name Купить снова
+						
+					
+					+e.line._r._border(data-adaptive="hide")
+						+b.BUTTON.btn._transparent._ico
+							+e.ico
+								+icon('icons-print', {width: '18px', height: '18px'})
+							+e.SPAN.name Распечатать
+						+b.BUTTON.btn._transparent._ico
+							+e.ico
+								+icon('icons-close', {width: '11px', height: '11px'})
+							+e.SPAN.name Удалить все товары
+							
+					+e.main
+						div(data-tabs-content="cart")
+							+cart
+							+cart2
+							+cart3
+									
+					+e.ASIDE.side
+						+e.side-scroll
+							+b.block
+								+e.line._center
+									p Всего <strong>90</strong> товара, весом<br> ~ <strong>15201</strong> кг, на сумму:
+								+e.line._gray._center._big-text
+									span 3 900 р.
+								+e.line._center
+									+b.BUTTON.btn._highlight Оформить заказ
+								
+						
+
+		+e.area
+			+b.container
+				+feautures
+
+
+
+
+
+
+		+footer

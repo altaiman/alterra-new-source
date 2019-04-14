@@ -1,0 +1,25 @@
+include !bemto/index.pug
+
+include caption/index.pug
+
+-
+  var global = {
+    title: 'Альтерра',
+    paths: {
+      images: 'img/',
+      pictures: 'pictures/',
+      icons: function() { return this.images+'icons.svg' }
+    }
+  }
+  
+  function randomInt(min,max) {
+      return Math.floor(Math.random()*(max-min+1)+min);
+  }
+  
+  function randomBool() {
+    return Math.random() >= 0.5;
+  }
+  
+  function toPrice(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }

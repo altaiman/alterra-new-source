@@ -1,0 +1,29 @@
+include ../global.pug
+
+- var i = 0;
+
+mixin tags(array)
+  +b.tags
+    +e.UL.list
+      +e.LI.item._text
+        span Может пригодиться:
+      - if (array)
+        each tag in array
+          +e.LI.item
+            a(href="#")= tag
+          
+      +e.LI.item._all
+        a(href="#") Все категории
+
+mixin needs(array)
+  +b.tags._bigger
+    +e.UL.list
+      - if (array)
+        each tag in array
+          - if (i == 0)
+            +e.LI.item._active
+              span= tag
+          - else
+            +e.LI.item
+              span= tag
+          - i++

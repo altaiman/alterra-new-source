@@ -1,0 +1,317 @@
+include ../global.pug
+
+include ../svg/index.pug
+
+mixin m-menu-item(data)
+  +e.LI.item(class=data.cls data-counter=data.counter)
+    - if (data.link)
+      +e.A.item-wrap(href=data.link)
+        - if (data.ico)
+          +e.SPAN.item-ico 
+              +icon(data.ico.name, size={ width: data.ico.size[0], height: data.ico.size[1] }) 
+        +e.SPAN.name= data.name
+    - else
+      +e.SPAN.item-wrap
+        - if (data.ico)
+          +e.SPAN.item-ico 
+              +icon(data.ico.name, size={ width: data.ico.size[0], height: data.ico.size[1] })  
+        +e.SPAN.name= data.name
+      - if (data.drop)
+        +e.drop
+          +e.UL.list
+            each item in data.drop
+              +m-menu-item({
+                name: item.name,
+                counter: item.counter,
+                cls: (item.drop) ? '_drop' : '',
+                drop: (item.drop) ? item.drop : false
+              })
+            
+        
+mixin m-menu
+  +b.m-menu
+    +e.BUTTON.toggle
+      +icon('icons-menu', size={ width: '18px', height: '14px' })
+      +icon('icons-menu2', size={ width: '18px', height: '14px' })
+      
+    +e.content
+      +e.top
+        +e.BUTTON.toggle._close
+        p Новоалтайск, ул.Дорожная, 44/1
+        
+      +e.UL.list
+        
+        +e.LI.item._drop
+          +e.SPAN.item-wrap
+            +e.SPAN.item-ico 
+              +icon('icons-menu', size={ width: '18px', height: '14px' })  
+            
+            +e.SPAN.name Каталог
+          +e.drop._catalog
+            +e.top
+              +e.BUTTON.back
+              +b.SPAN.caption Каталог
+              +search
+            +e.UL.list
+              +m-menu-item({
+                name: 'Сайдинг, кровля, водосток',
+                cls: '_drop',
+                ico: {
+                  name: 'icons-menu-home',
+                  size: ['18px', '18px']
+                },
+                drop: [
+                  {
+                    name: 'Сайдинг',
+                    counter: '338',
+                    drop: [
+                      {name: 'Виниловый сайдинг'}, {name: 'Акриловый сайдинг'}, 
+                      {name: 'Фасадные панели (цокольный сайдинг)'}, 
+                      {name: 'Комплектующие к сайдингу'}, 
+                      {name: 'Комплектующие к фасадным панелям'},
+                      {name: 'Металлический сайдинг'}
+                    ]
+                  },{
+                    name: 'Мягкая кровля',
+                    counter: 87
+                  },{
+                    name: 'Профнастил, доборные эелементы',
+                    counter: 78
+                  },{
+                    name: 'Водосточная система',
+                    counter: 75
+                  },{
+                    name: 'Наплавляемая кровля',
+                    counter: 13
+                  },{
+                    name: 'Рубероид',
+                    counter: 5
+                  },{
+                    name: 'Ондулин',
+                    counter: 33
+                  },{
+                    name: 'Битум, мастика, праймер',
+                    counter: 26
+                  },{
+                    name: 'Лист стальной',
+                    counter: 10
+                  },{
+                    name: 'Шифер',
+                    counter: 3
+                  },{
+                    name: 'Гидроизоляционные ленты',
+                    counter: 11
+                  },{
+                    name: 'Дренажная система',
+                    counter: 12
+                  },{
+                    name: 'Металлочерепица',
+                    counter: 17
+                  },{
+                    name: 'ПВХ мембрана',
+                    counter: 8
+                  },{
+                    name: 'Фасадная плитка',
+                    counter: 6
+                  }
+                ]
+              })
+              
+              +m-menu-item({
+                name: 'Теплоизоляционные материалы',
+                link: '#',
+                ico: {
+                  name: 'icons-menu-roll',
+                  size: ['19px', '18px']
+                }
+              })
+              
+              +m-menu-item({
+                name: 'Кирпич, цемент, газобетон, плитка',
+                link: '#',
+                ico: {
+                  name: 'icons-menu-bricks',
+                  size: ['24px', '14px']
+                }
+              })
+              
+              +m-menu-item({
+                name: 'Металлопрокат',
+                link: '#',
+                ico: {
+                  name: 'icons-menu-metal',
+                  size: ['24px', '24px']
+                }
+              })
+              
+              +m-menu-item({
+                name: 'Внутренняя отделка',
+                link: '#',
+                ico: {
+                  name: 'icons-menu-interior',
+                  size: ['20px', '22px']
+                }
+              })
+              
+              +m-menu-item({
+                name: 'Древесные материалы',
+                link: '#',
+                ico: {
+                  name: 'icons-menu-wood',
+                  size: ['20px', '17px']
+                }
+              })
+              
+              +m-menu-item({
+                name: 'Лакокрасочные материалы, пены, герметики',
+                link: '#',
+                ico: {
+                  name: 'icons-menu-paint',
+                  size: ['20px', '20px']
+                }
+              })
+              
+              +m-menu-item({
+                name: 'Отопление, водоснабжение, канализация',
+                link: '#',
+                ico: {
+                  name: 'icons-menu-heating',
+                  size: ['18px', '14px']
+                }
+              })
+              
+              +m-menu-item({
+                name: 'Санфаяс, ванная, кухня',
+                link: '#',
+                ico: {
+                  name: 'icons-menu-bath',
+                  size: ['19px', '18px']
+                }
+              })
+              
+              +m-menu-item({
+                name: 'Сад и огород',
+                link: '#',
+                ico: {
+                  name: 'icons-menu-garden',
+                  size: ['19px', '19px']
+                }
+              })
+              
+              +m-menu-item({
+                name: 'Инструменты, хозтовары, крепеж',
+                link: '#',
+                ico: {
+                  name: 'icons-menu-tools',
+                  size: ['18px', '17px']
+                }
+              })
+              
+              +m-menu-item({
+                name: 'Электрика',
+                link: '#',
+                ico: {
+                  name: 'icons-menu-electric',
+                  size: ['18px', '18px']
+                }
+              })
+        
+        +e.LI.item(data-counter="52")
+          +e.A.item-wrap(href="#basket")
+            +e.SPAN.item-ico 
+              +icon('icons_cart', size={ width: '17px', height: '14px' })  
+            
+            +e.SPAN.name Корзина
+            
+        +m-menu-item({
+          name: 'Вход / регистрация',
+          link: '#login',
+          ico: {
+            name: 'icons_user',
+            size: ['13px', '14px']
+          }
+        })
+        
+        +m-menu-item({
+          name: 'Оплатить заказ картой',
+          link: '#pay',
+          ico: {
+            name: 'icons_wallet',
+            size: ['14px', '14px']
+          }
+        })
+        
+        +m-menu-item({
+          name: 'О компании',
+          cls: '_drop',
+          drop: [
+            {
+              name: 'История'
+            },{
+              name: 'Контакты'
+            }
+          ]
+        })
+        
+        +m-menu-item({
+          name: 'Как купить',
+          cls: '_drop',
+        })
+        
+        +m-menu-item({
+          name: 'СтройКлуб',
+          link: '#'
+        })
+        
+        +m-menu-item({
+          name: 'Корпоративным клиентам',
+          link: '#'
+        })
+        
+        +m-menu-item({
+          name: 'СтройКлуб',
+          link: '#'
+        })
+        
+        +m-menu-item({
+          name: 'Доставка',
+          link: '#'
+        })
+        
+        +m-menu-item({
+          name: 'Услуги',
+          link: '#'
+        })
+        
+        +m-menu-item({
+          name: 'Отзывы / написать отзыв',
+          link: '#'
+        })
+        
+        +m-menu-item({
+          name: 'Адреса магазинов',
+          link: '#'
+        })
+        
+        +m-menu-item({
+          name: '+7 3852 558-558',
+          ico: {
+            name: 'icons_tel',
+            size: ['13px', '14px']
+          },
+          link: 'tel:+73852558558'
+        })
+        
+        +m-menu-item({
+          name: '+7 38532 457-57',
+          ico: {
+            name: 'icons_tel',
+            size: ['13px', '14px']
+          },
+          link: 'tel:+7385245757'
+        })
+        
+        +m-menu-item({
+          name: 'Полная версия сайта',
+          link: '#'
+        })

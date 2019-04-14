@@ -1,0 +1,19 @@
+include ../global.pug
+include data.pug
+
+mixin description-catalog(data)
+  +b.description._bg._seo
+    +e.short !{data.short}
+    +e.SPAN.show Подробнее
+    +e.all !{data.all}
+  
+
+mixin description(data)
+  +b.description(class=data.class)
+    - if (data.caption)
+      +b.SPAN.caption._regular= data.caption
+      
+    +e.short !{data.short}
+    +e.SPAN.show Полное описание
+    +e.all !{data.all}
+  

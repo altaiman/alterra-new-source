@@ -1,0 +1,34 @@
+include ../global.pug
+include data.pug
+
+mixin promo
+  +b.promo
+    +e.slider(data-slider="promo")
+      +b.A.banner(href="#")
+        img(src="pictures/promo-b.jpg")
+      +b.A.banner(href="#")
+        img(src="https://tg-alterra.ru/upload/iblock/395/3950dea1bb0045b170f2a238db72f6b6.png")
+      +b.A.banner(href="#")
+        img(src="pictures/promo-b.jpg")
+      +b.A.banner(href="#")
+        img(src="pictures/promo-b2.jpg")
+
+mixin promo-mobile
+  +b.promo._mobile
+    +e.slider(data-slider="promo")
+      +b.A.banner(href="#")
+        img(src="pictures/banner_mini.jpg")
+  
+mixin promo-side
+  +b.promo
+    +e.slider(data-slider="promo")
+      +b.A.banner(href="#")
+        img(src="pictures/promo-s.jpg")
+      +b.A.banner(href="#")
+        img(src="pictures/promo-s2.jpg")
+      +b.A.banner(href="#")
+        img(src="pictures/promo-s.jpg")
+      +b.A.banner(href="#")
+        img(src="pictures/promo-s2.jpg")
+      
+  

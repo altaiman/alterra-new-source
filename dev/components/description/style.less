@@ -1,0 +1,99 @@
+.description {
+  padding: 8px 0;
+  line-height: 22px;
+
+  p {
+    margin: 0 0 16px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 16px;
+  }
+
+  &__short {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 5px;
+  }
+
+  &__short_gradient {
+    &::before {
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+      content: '';
+      height: 50%;
+      pointer-events: none;
+    }
+  }
+
+  &__show {
+    position: relative;
+    display: inline-block;
+    color: @hypertext;
+    padding-right: 16px;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      content: '';
+      width: 16px;
+      height: 16px;
+      background: url('../img/toggle-arrow-blue.svg') no-repeat center;
+    }
+
+  }
+
+  &__all {
+    display: none;
+  }
+}
+
+.description_bg {
+  background: @lite;
+  padding: 16px;
+
+  .description {
+    &__short {
+      &::before {
+        background: linear-gradient(to top, @lite 0%,rgba(255,255,255,0) 100%);
+      }
+    }
+  }
+}
+
+.description_seo {
+  margin: 60px 0 0;
+
+  p {
+    margin: 0 0 8px;
+  }
+}
+//
+// .description_index {
+//   &__short {
+//     &::before {
+//       position: absolute;
+//       z-index: 3;
+//       left: 0;
+//       bottom: 0;
+//       width: 100%;
+//       background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+//       content: '';
+//       height: 50%;
+//       pointer-events: none;
+//     }
+//   }
+// }

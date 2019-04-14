@@ -1,0 +1,20 @@
+include ../global.pug
+include data.pug
+
+
+mixin sort
+  +b.sort
+    span Сортировать по: 
+    +e.UL.list
+      +e.LI.item 
+        span по возрастанию цены
+        +e.ico
+          +icon('icons-sort', size={ width: '16px', height: '14px' })
+      +e.LI.item._reverse
+        span по убыванию цены
+        +e.ico
+          +icon('icons-sort', size={ width: '16px', height: '14px' })
+          
+      
+    
+  

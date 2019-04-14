@@ -1,0 +1,31 @@
+include ../global.pug
+include data.pug
+
+
+mixin view(type)
+  +b.view
+    span Вид каталога:
+    +e.UL.list
+      case type
+        when 1
+          +e.LI.type._active
+            +icon('icons-view-type-1')
+          +e.LI.type
+            +icon('icons-view-type-2')
+          +e.LI.type
+            +icon('icons-view-type-3')
+        when 2
+          +e.LI.type
+            +icon('icons-view-type-1')
+          +e.LI.type._active
+            +icon('icons-view-type-2')
+          +e.LI.type
+            +icon('icons-view-type-3')
+        when 3
+          +e.LI.type
+            +icon('icons-view-type-1')
+          +e.LI.type
+            +icon('icons-view-type-2')
+          +e.LI.type._active
+            +icon('icons-view-type-3')
+  

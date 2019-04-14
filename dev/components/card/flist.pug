@@ -1,0 +1,79 @@
+include ../global.pug
+
+mixin flist(data)
+  +b.flist
+    each item in data
+      - if (item.name)
+        - if (item.tip)
+          +e.SPAN.item._wname.tip__._hover
+            +b.flist__ico
+              img(src="img/f-delivery.svg")
+            +e.SPAN.name= item.name 
+            +e.DIV.hidecontent
+              +b.BUTTON.close(data-close)
+              +e.hidecontent-main
+                p !{item.tip.text}
+            - if (item.tip.link)
+              +e.hidecontent-end
+                +e.A.link(href="/") Узнать больше
+                
+        - else
+          +e.A.item._wname(href="#")
+            +e.ico
+              img(src="img/f-delivery.svg")
+            +e.SPAN.name= item.name 
+          
+      - else if (item.tip)
+        +e.SPAN.item.tip__._hover
+          +b.flist__ico
+            img(src="img/f-delivery.svg")
+          +e.DIV.hidecontent
+            +b.BUTTON.close(data-close)
+            +e.hidecontent-main
+              p !{item.tip.text}
+          - if (item.tip.link)
+            +e.hidecontent-end
+              +e.A.link(href="/") Узнать больше
+      - else
+        +e.A.item(href="#")
+          +e.ico
+            img(src="img/f-delivery.svg")
+
+mixin flist-small(data)
+  +b.flist._small
+    each item in data
+      - if (item.name)
+        - if (item.tip)
+          +e.SPAN.item._wname.tip__._hover
+            +b.flist__ico
+              img(src="img/f-delivery.svg")
+            +e.SPAN.name= item.name 
+            +e.DIV.hidecontent
+              +b.BUTTON.close(data-close)
+              +e.hidecontent-main
+                p !{item.tip.text}
+            - if (item.tip.link)
+              +e.hidecontent-end
+                +e.A.link(href="/") Узнать больше
+                
+        - else
+          +e.A.item._wname(href="#")
+            +e.ico
+              img(src="img/f-delivery.svg")
+            +e.SPAN.name= item.name 
+          
+      - else if (item.tip)
+        +e.SPAN.item.tip__._hover
+          +b.flist__ico
+            img(src="img/f-delivery.svg")
+          +e.DIV.hidecontent
+            +b.BUTTON.close(data-close)
+            +e.hidecontent-main
+              p !{item.tip.text}
+          - if (item.tip.link)
+            +e.hidecontent-end
+              +e.A.link(href="/") Узнать больше
+      - else
+        +e.A.item(href="#")
+          +e.ico
+            img(src="img/f-delivery.svg")

@@ -1,0 +1,48 @@
+include logotype.pug
+include ../search/index.pug
+include ../ielement/index.pug
+
+include ../global.pug
+
+mixin header-fix
+  +e.fix
+    +b.container._flex
+      +logotype_small
+      +search
+      +ielement({
+        name: '+7 (3852) 548-333',
+        icon: {
+          name: 'icons_tel',
+          size: {
+            width: '13px',
+            height: '14px'
+          }
+        },
+        classes: '_small ',
+        link: 'tel:+73852548333'
+      })
+      +b.BUTTON.btn._ico._tr-border-white 
+        +e.SPAN.ico
+          +icon('icons_club', size={ width: '19px', height: '14px' })
+        span Стройклуб
+      +b.BUTTON.btn._ico._tr-border-white(data-drop="trigger") 
+        +e.SPAN.ico
+          +icon('icons_user', size={ width: '13px', height: '14px'})
+        span Кабинет
+        
+      +ielement({
+        name: 'Корзина',
+        val: '99 999 руб.',
+        icon: {
+          name: 'icons_cart',
+          size: {
+            width: '29px',
+            height: '24px'
+          }
+        },
+        link: '#basket',
+        counter: 33
+      })
+            
+        
+        

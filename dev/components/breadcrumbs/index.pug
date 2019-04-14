@@ -1,0 +1,17 @@
+include ../global.pug
+include data.pug
+
+- var k = 0;
+
+mixin breadcrumbs(data)
+  +b.UL.breadcrumbs
+    +e.LI.item
+      a(href="index.html") Главная
+    - if (data)
+      each item in data
+        +e.LI.item
+          a(href="#"+k)= item
+          
+          - k++
+        
+  

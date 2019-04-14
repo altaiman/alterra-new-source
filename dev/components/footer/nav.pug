@@ -1,0 +1,81 @@
+include ../global.pug
+
+mixin fnav
+  +b.footer-nav
+    +e.block
+      +caption({ title: 'О компании', size: 0 })
+      +e.UL.list
+        +e.LI.item
+          a(href="#") Наша компания
+        +e.LI.item
+          a(href="#") Карьера
+        +e.LI.item
+          a(href="#") Галерея
+        +e.LI.item
+          a(href="#") Новости
+          +e.block
+      
+    +e.block
+      +caption({ title: 'С нами выгодно', size: 0 })
+      +e.UL.list
+        +e.LI.item
+          a(href="#") Акции
+        +e.LI.item
+          a(href="#") СтройКлуб
+        +e.LI.item
+          a(href="#") Обмен и возврат товара
+        +e.LI.item
+          a(href="#") Поставщикам
+        +e.LI.item
+          a(href="#") Положение о бонусной программе
+
+    +e.block
+      +caption({ title: 'Услуги', size: 0 })
+      +e.UL.list
+        +e.LI.item
+          a(href="#") Доставка
+        +e.LI.item
+          a(href="#") Доставка по звонку
+        +e.LI.item
+          a(href="#") Разгрузка и подъем на этаж
+        +e.LI.item
+          a(href="#") Кредит
+        +e.LI.item
+          a(href="#") Установка и монтаж
+        +e.LI.item
+          a(href="#") Резка и распил
+        +e.LI.item
+          a(href="#") Колеровка
+          
+    +e.block
+      +caption({ title: 'Помощь покупателю', size: 0 })
+      +e.UL.list
+        +e.LI.item
+          a(href="#") Как оплатить
+        +e.LI.item
+          a(href="#") Как заказать
+        +e.LI.item
+          a(href="#") Политика в области обработки и защиты персональных данных
+  
+    +e.block
+      +caption({ title: 'Покупателям', size: 0 })
+      +e.UL.list
+        +e.LI.item
+          a(href="#") Розничным покупателям
+        +e.LI.item
+          a(href="#") Корпоративным покупателям
+        +e.LI.item
+          a(href="#") Подарочные сертификаты
+          
+    +e.block
+      +caption({ title: 'Магазины', size: 0 })
+      +e.UL.list
+        +e.LI.item
+          a(href="#") Барнаул-Бийск-Новосибирск
+        +e.LI.item
+          a(href="#") Магазин в Барнауле
+        +e.LI.item
+          a(href="#") Магазин в Новоалтайске
+        +e.LI.item
+          a(href="#") Магазин в Бийске
+      

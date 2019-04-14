@@ -1,0 +1,48 @@
+//- includes
+include components/head/index.pug
+include components/header/index.pug
+include components/svg/index.pug
+
+include components/breadcrumbs/index.pug
+include components/card/index.pug
+include components/filter/index.pug
+include components/catalog/index.pug
+include components/catalog/nav.pug
+include components/pagination/index.pug
+include components/description/index.pug
+include components/feautures/index.pug
+
+include components/footer/index.pug
+
+//- end includes
+
+//- variables page 
+- title = 'Эмали для пола';
+
+doctype html
+html
+	+head
+	+b.BODY.page
+		+symbols
+		+header
+	
+		+e.content
+
+			+b.container
+				+e.content
+					+e.ASIDE.side
+						+catalog-nav-index
+						
+					+e.main
+						+categorys
+
+		+e.area
+			+b.container
+				+feautures
+
+
+
+
+
+
+		+footer
